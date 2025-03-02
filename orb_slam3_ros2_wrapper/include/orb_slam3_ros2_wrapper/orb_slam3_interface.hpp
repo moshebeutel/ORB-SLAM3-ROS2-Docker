@@ -79,6 +79,8 @@ namespace ORB_SLAM3_Wrapper
 
         void getCurrentMapPoints(sensor_msgs::msg::PointCloud2 &mapPointCloud);
 
+        void getAllMapPoints(sensor_msgs::msg::PointCloud2 &mapPCL);
+
         void mapPointsVisibleFromPose(geometry_msgs::msg::Pose cameraPose, std::vector<ORB_SLAM3::MapPoint*>& points, int maxLandmarks, float maxDistance, float maxAngle);
 
         void mapPointsVisibleFromPose(Sophus::SE3f& cameraPose, std::vector<ORB_SLAM3::MapPoint*>& points, int maxLandmarks, float maxDistance, float maxAngle);

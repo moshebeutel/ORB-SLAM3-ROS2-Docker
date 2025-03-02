@@ -4,6 +4,14 @@
  * @author Suchetan R S (rssuchetan@gmail.com)
  */
 #include "orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
+// ----------------------------------------------------------------
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl_conversions/pcl_conversions.h>
+#include <pcl/conversions.h>
+//#include </transforms.h>
+#include <pcl/common/io.h>
+
 
 namespace ORB_SLAM3_Wrapper
 {
@@ -76,6 +84,7 @@ namespace ORB_SLAM3_Wrapper
         std::sort(mapsList.begin(), mapsList.end(), compareInitKFid());
         allKFs_ = makeKFIdPair(mapsList);
         std::vector<ORB_SLAM3::Map *> mapsList2 = orbAtlas_->GetAllMaps();
+
         // std::cout << "Current map id: " << orbAtlas_->GetCurrentMap()->GetId() << std::endl;
         // for (auto mp : mapsList2)
         // {
@@ -155,6 +164,47 @@ namespace ORB_SLAM3_Wrapper
             }
         }
         mapPointCloud = typeConversions_->MapPointsToPCL(trackedMapPoints);
+    }
+    // ------------------------------------------------------------------------------------------------
+    void ORBSLAM3Interface::getAllMapPoints(sensor_msgs::msg::PointCloud2 &mapPCL)
+    {
+        std::lock_guard<std::mutex> lock(mapDataMutex_);
+        pcl::PointCloud<pcl::PointXYZ> cloud;
+
+        std::vector<ORB_SLAM3::Map *> mapsList = orbAtlas_->GetAllMaps();
+        
+        std::cout << "Publishing map points..." << std::endl;
+
+        for (ORB_SLAM3::Map *pMap : mapsList)
+        {
+            if (!pMap)
+                continue;
+
+            std::vector<ORB_SLAM3::MapPoint *> points = pMap->GetAllMapPoints();
+
+            for (ORB_SLAM3::MapPoint *pMP : points)
+            {
+                if (pMP && !pMP->isBad())
+                {
+                    Eigen::Vector3f pos = pMP->GetWorldPos();
+                    pcl::PointXYZ pt;
+                    pt.x = pos.x();
+                    pt.y = pos.y();
+                    pt.z = pos.z();
+                    cloud.push_back(pt);
+                }
+            }
+        }
+
+        pcl::toROSMsg(cloud, mapPCL);
+        mapPCL.header.frame_id = "map";
+        mapPCL.header.stamp = rclcpp::Time(rclcpp::Clock().now());
+        std::cout << "MapPCL data size: " << mapPCL.data.size() << std::endl;
+        if (mapPCL.data.size() == 0) {
+            std::cout << "No map points available!" << std::endl; 
+            return;
+}
+
     }
 
     void ORBSLAM3Interface::mapPointsVisibleFromPose(geometry_msgs::msg::Pose cameraPose, std::vector<ORB_SLAM3::MapPoint*>& points, int maxLandmarks, float maxDistance, float maxAngle)

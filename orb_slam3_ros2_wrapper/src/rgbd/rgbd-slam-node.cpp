@@ -5,7 +5,14 @@
  */
 #include "rgbd-slam-node.hpp"
 
+
 #include <opencv2/core/core.hpp>
+
+// ----------------------------------------------------------------
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl_conversions/pcl_conversions.h>
+
 
 namespace ORB_SLAM3_Wrapper
 {
@@ -85,7 +92,10 @@ namespace ORB_SLAM3_Wrapper
         // Timers
         mapDataCallbackGroup_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
         mapDataTimer_ = this->create_wall_timer(std::chrono::milliseconds(map_data_publish_frequency_), std::bind(&RgbdSlamNode::publishMapData, this), mapDataCallbackGroup_);
-
+        // ----------------------------------------------------------------
+        // Timer to publish map points 
+        mapPointsTimer_ = this->create_wall_timer(std::chrono::milliseconds(map_data_publish_frequency_), std::bind(&RgbdSlamNode::publishMapPointCloudTimerCallback, this));
+        
         interface_ = std::make_shared<ORB_SLAM3_Wrapper::ORBSLAM3Interface>(strVocFile, strSettingsFile,
                                                                             sensor, bUseViewer, robot_x_,
                                                                             robot_y_, global_frame_, odom_frame_id_, robot_base_frame_id_);
@@ -161,16 +171,24 @@ namespace ORB_SLAM3_Wrapper
             auto t1 = std::chrono::high_resolution_clock::now();
             auto time_create_mapPCL = std::chrono::duration_cast<std::chrono::duration<double>>(t1 - start).count();
             RCLCPP_DEBUG_STREAM(this->get_logger(), "Time to create mapPCL object: " << time_create_mapPCL << " seconds");
-
+            
+            // // new change: get all points: 
+            // // Get ALL maps' points instead of only the current map
+            // RCLCPP_INFO(this->get_logger(), "Publishing map points...");
+            // interface_->getAllMapPoints(mapPCL);
+            // ------------------------------------------------
+            // original code
             interface_->getCurrentMapPoints(mapPCL);
 
             if (mapPCL.data.size() == 0)
+                RCLCPP_WARN(this->get_logger(), "No map points available!");
                 return;
+
+            
 
             auto t2 = std::chrono::high_resolution_clock::now();
             auto time_get_map_points = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1).count();
             RCLCPP_DEBUG_STREAM(this->get_logger(), "Time to get current map points: " << time_get_map_points << " seconds");
-
             mapPointsPub_->publish(mapPCL);
             auto t3 = std::chrono::high_resolution_clock::now();
             auto time_publish_map_points = std::chrono::duration_cast<std::chrono::duration<double>>(t3 - t2).count();
@@ -181,6 +199,16 @@ namespace ORB_SLAM3_Wrapper
 
             // Print the time taken for each line
             response->landmarks = mapPCL;
+        }
+    }
+
+    void RgbdSlamNode::publishMapPointCloudTimerCallback()
+    {
+        if (isTracked_){
+            sensor_msgs::msg::PointCloud2 mapPCL;
+            interface_->getAllMapPoints(mapPCL);
+            if (mapPCL.data.size() != 0)
+                mapPointsPub_->publish(mapPCL);
         }
     }
 
@@ -197,10 +225,11 @@ namespace ORB_SLAM3_Wrapper
             slam_msgs::msg::MapData mapDataMsg;
             interface_->mapDataToMsg(mapDataMsg, true, false);
             mapDataPub_->publish(mapDataMsg);
+            
             auto t1 = std::chrono::high_resolution_clock::now();
             auto time_publishMapData = std::chrono::duration_cast<std::chrono::duration<double>>(t1 - start).count();
             RCLCPP_DEBUG_STREAM(this->get_logger(), "Time to create mapdata: " << time_publishMapData << " seconds");
-            RCLCPP_INFO_STREAM(this->get_logger(), "*************************");
+            RCLCPP_INFO_STREAM(this->get_logger(), "*************************");            
         }
     }
 

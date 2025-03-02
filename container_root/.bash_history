@@ -498,3 +498,18 @@ ls
 tmux
 ls
 ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+ls
+cd colcon_ws/
+ls
+ls src/
+ls
+cd src/
+ls
+cd orb_slam3_ros2_wrapper/
+ls
+cat CMakeLists.txt 
+ls
+vim src/orb_slam3_interface.cpp 
+cd include/orb_slam3_ros2_wrapper/
+vim orb_slam3_interface.hpp 
+exit

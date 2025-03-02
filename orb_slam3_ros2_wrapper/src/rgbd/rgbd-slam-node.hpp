@@ -67,6 +67,9 @@ namespace ORB_SLAM3_Wrapper
                                   std::shared_ptr<slam_msgs::srv::GetAllLandmarksInMap::Request> request,
                                   std::shared_ptr<slam_msgs::srv::GetAllLandmarksInMap::Response> response);
 
+        // ----------------------------------------------------------------
+        void publishMapPointCloudTimerCallback();
+
         /**
          * @brief Callback function for GetMap service.
          * @param request_header Request header.
@@ -108,6 +111,9 @@ namespace ORB_SLAM3_Wrapper
         rclcpp::CallbackGroup::SharedPtr mapDataCallbackGroup_;
         rclcpp::CallbackGroup::SharedPtr mapPointsCallbackGroup_;
         rclcpp::CallbackGroup::SharedPtr pointsInViewCallbackGroup_;
+        // --------------------------------
+        rclcpp::TimerBase::SharedPtr mapPointsTimer_;
+        // --------------------------------
         // ROS Params
         std::string robot_base_frame_id_;
         std::string odom_frame_id_;
