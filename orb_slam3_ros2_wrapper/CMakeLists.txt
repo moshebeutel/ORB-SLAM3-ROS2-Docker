@@ -7,17 +7,10 @@ ENDIF()
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
-# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall   -O3")
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall   -O3")
-# set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -march=native")
-# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native")
-
-# You should set the PYTHONPATH to your own python site-packages path
 set(ENV{PYTHONPATH} "/opt/ros/humble/lib/python3.10/site-packages/")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
 
-# Default to C++20
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 20)
 endif()
@@ -26,7 +19,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(ament_cmake_auto REQUIRED)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
@@ -54,38 +46,42 @@ link_directories(
   include
 )
 
+# ------------------------
+# RGBD Executable
+# ------------------------
 add_executable(rgbd
   src/type_conversion.cpp
   src/orb_slam3_interface.cpp
   src/rgbd/rgbd-slam-node.cpp
   src/rgbd/rgbd.cpp
 )
-ament_target_dependencies(rgbd rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
 
-# add_executable(test1
-#   src/ft.cpp
-#   src/test_frame.cpp
-# )
 ament_target_dependencies(rgbd rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
-# ament_target_dependencies(test1 rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
-# test1
 target_link_libraries(rgbd ${PCL_LIBRARIES})
-install(TARGETS rgbd
-  DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY launch params
-DESTINATION share/${PROJECT_NAME}
+install(TARGETS rgbd
+  DESTINATION lib/${PROJECT_NAME}
 )
 
-if(BUILD_TESTING)
-  find_package(gtest)
-  find_package(ament_cmake_gtest REQUIRED)
-  ament_find_gtest()
-  include_directories(${GTEST_INCLUDE_DIRS})
-  link_directories(${GTEST_LIBRARY_DIRS})
-  
-  ament_add_gtest(typeconversionTests tests/typeConversionsTests.cpp src/type_conversion.cpp)
-  ament_target_dependencies(typeconversionTests rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
-endif()
+# ------------------------
+# Install launch and params
+# ------------------------
+install(DIRECTORY launch params
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# ------------------------
+# Multi-Map Fusion Executable
+# ------------------------
+add_executable(orb_slam3_multi_map_fusion
+  src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
+  src/multi_map_fusion/multi_map_fusion.cpp
+)
+
+ament_target_dependencies(orb_slam3_multi_map_fusion rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
+
+install(TARGETS orb_slam3_multi_map_fusion
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
