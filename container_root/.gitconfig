@@ -1,2 +1,7 @@
 [safe]
 	directory = /home/orb/ORB_SLAM3
+[user]
+	email = daphna.ashkenazi@gmail.com
+	name = daphnaa
+[credential]
+	helper = "!f() { /root/.vscode-server/bin/e54c774e0add60467559eb0d1e229c6452cf8447/node /tmp/vscode-remote-containers-e84c127c-9126-4eba-b369-a4d27cdeea83.js git-credential-helper $*; }; f"

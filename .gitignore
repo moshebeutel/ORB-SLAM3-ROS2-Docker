@@ -26,5 +26,10 @@ container_root/Simple_ROS2_bag/**
 container_root/hotspot/**
 container_root/.debug
 container_root/profilers/**
+container_root/build/
+container_root/install/
+container_root/log/
+container_root/fusion/
 **perf**
 **.osa**
+.history/

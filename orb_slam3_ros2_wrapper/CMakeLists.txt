@@ -71,17 +71,48 @@ install(DIRECTORY launch params
 )
 
 # ------------------------
-# Multi-Map Fusion Executable
+# Map Merger Executable
 # ------------------------
-add_executable(orb_slam3_multi_map_fusion
-  src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
-  src/multi_map_fusion/multi_map_fusion.cpp
+# Build main executable
+add_executable(map_merger
+  src/map_merger/map_merger.cpp         # Implementation of map_merger class
+  src/map_merger/map_merger_main.cpp    # Main file to run the map_merger
 )
 
-ament_target_dependencies(orb_slam3_multi_map_fusion rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
+# Include directories
+include_directories(
+  include
+  src/map_merger # Add this line to include the map_merger directory
+  ${ORB_SLAM3_ROOT_DIR}/include #Add the orb slam 3 include directory.
+  ${PCL_INCLUDE_DIRS} #Add the PCL include directory.
+)
 
-install(TARGETS orb_slam3_multi_map_fusion
+ament_target_dependencies(map_merger
+                          rclcpp
+                          sensor_msgs
+                          cv_bridge
+                          message_filters
+                          ORB_SLAM3
+                          Pangolin
+                          tf2_ros
+                          tf2_eigen
+                          slam_msgs
+                          pcl_ros
+                          pcl_conversions
+                          PCL
+                          nav_msgs
+)
+
+target_link_libraries(map_merger
+  ${PCL_LIBRARIES}
+  ${ORB_SLAM3_LIBRARIES}
+)
+
+# Install targets
+# Install the map_merger executable
+install(TARGETS map_merger
   DESTINATION lib/${PROJECT_NAME}
 )
+
 
 ament_package()

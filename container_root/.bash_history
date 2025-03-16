@@ -513,3 +513,124 @@ vim src/orb_slam3_interface.cpp
 cd include/orb_slam3_ros2_wrapper/
 vim orb_slam3_interface.hpp 
 exit
+cd colcon_ws/
+colcon build --symlink-install
+. install/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+exit
+cd colcon_ws/
+source /opt/ros/humble/setup.bash 
+colcon build --symlink-install
+sudo apt install ros-humble-ament-cmake-gtest
+colcon build --packages-select orb_slam3_ros2_wrapper
+exit
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --packages-select orb_slam3_ros2_wrapper
+colcon build --symlink-install
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-clean-first
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-clean-first
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+rm -rf build/orb_slam3_ros2_wrapper/ install/orb_slam3_ros2_wrapper/ log/
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+cd src/
+ls
+cd orb_slam3_ros2_wrapper/
+ls
+cd src/
+ls
+chmod +x multi_map_fusion/
+ls
+ll
+chmod -R 777 .
+ll
+cd multi_map_fusion/
+ls
+cd ..
+cd rgbd/
+ls
+cd ..
+ls
+cd ..
+ls
+rm -rf build/ install/ log/
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+rm -rf build install log
+colcon build --packages-select orb_slam3_ros2_wrapper
+rm -rf build install log
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+rm -rf build install log
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+colcon build --packages-select orb_slam3_ros2_wrapper
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON --event-handlers console_cohesion+
+colcon build --packages-select orb_slam3_ros2_wrapper
+rm -rf build install log
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+vim src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp 
+rm -rf build install log
+source /opt/ros/humble/setup.bash 
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+rm -rf build install log
+exit
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+exit
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+colcon build --packages-select orb_slam3_ros2_wrapper
+exit
+cd colcon_ws/
+. /opt/ros/humble/setup.bash 
+colcon build --symlink-install
+rm -rf build install log
+colcon build --symlink-install
+rm -rf build install log
+colcon build --symlink-install
+rm -rf build install log
+colcon build --symlink-install
+rm -rf build install log
+colcon build --symlink-install
+rm -rf build install log
+colcon build --symlink-install
+rm -rf build install log
+colcon build --symlink-install
+clear
+colcon build --symlink-install
+rm -rf build install log
+clear
+colcon build --symlink-install
+clear
+rm -rf build install log
+colcon build --symlink-install
+rm -rf build install log
+clear
+colcon build --symlink-install
+rm -rf build install log
+clear
+colcon build --symlink-install
+clear
+colcon build --symlink-install
+rm -rf build install log
+clear
+colcon build --symlink-install
+clear
+colcon build --symlink-install
+rm -rf build install log
+clear
+colcon build --symlink-install
+
+colcon build --symlink-install
+
+source /opt/ros/humble/setup.bash 
+colcon build --symlink-install
+
+rm -rf build install log
+exit

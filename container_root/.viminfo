@@ -15,7 +15,7 @@
 
 # Command Line History (newest to oldest):
 :qa
-|2,0,1740930634,,"qa"
+|2,0,1741019948,,"qa"
 :x
 |2,0,1709635249,,"x"
 :q
@@ -51,36 +51,52 @@
 |3,1,36,0,1,0,1708855923,"s"
 
 # File marks:
-'0  89  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
-|4,48,89,0,1740930634,"~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
-'1  466  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
-|4,49,466,0,1740930592,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
-'2  17  50  ~/shell_scripts/multi_orb.sh
-|4,50,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
-'3  7  33  ~/shell_scripts/multi_orb.sh
-|4,51,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
+'0  79  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
+|4,48,79,0,1741019948,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp"
+'1  89  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
+|4,49,89,0,1740930634,"~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
+'2  466  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
+|4,50,466,0,1740930592,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
+'3  17  50  ~/shell_scripts/multi_orb.sh
+|4,51,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
 '4  7  33  ~/shell_scripts/multi_orb.sh
 |4,52,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
-'5  17  48  ~/shell_scripts/multi_orb.sh
-|4,53,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
+'5  7  33  ~/shell_scripts/multi_orb.sh
+|4,53,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
 '6  17  48  ~/shell_scripts/multi_orb.sh
 |4,54,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
 '7  17  48  ~/shell_scripts/multi_orb.sh
 |4,55,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
-'8  6  10  ~/shell_scripts/multi_orb.sh
-|4,56,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
+'8  17  48  ~/shell_scripts/multi_orb.sh
+|4,56,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
 '9  6  10  ~/shell_scripts/multi_orb.sh
 |4,57,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
 
 # Jumplist (newest first):
+-'  79  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
+|4,39,79,0,1741019948,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
+|4,39,1,0,1741019807,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp"
 -'  89  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
 |4,39,89,0,1740930634,"~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
+-'  89  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
+|4,39,89,0,1740930634,"~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
+|4,39,1,0,1740930615,"~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
 -'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
 |4,39,1,0,1740930615,"~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
 -'  466  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
 |4,39,466,0,1740930592,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
 -'  466  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
 |4,39,466,0,1740930592,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
+-'  466  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
+|4,39,466,0,1740930592,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
+-'  466  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
+|4,39,466,0,1740930592,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
+|4,39,1,0,1740930535,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
+|4,39,1,0,1740930535,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
 -'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
 |4,39,1,0,1740930535,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp"
 -'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/orb_slam3_interface.cpp
@@ -93,6 +109,22 @@
 |4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
 -'  17  50  ~/shell_scripts/multi_orb.sh
 |4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
+-'  17  50  ~/shell_scripts/multi_orb.sh
+|4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
+-'  17  50  ~/shell_scripts/multi_orb.sh
+|4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
+-'  17  50  ~/shell_scripts/multi_orb.sh
+|4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
+-'  17  50  ~/shell_scripts/multi_orb.sh
+|4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635236,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635236,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635236,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635236,"~/shell_scripts/multi_orb.sh"
 -'  7  33  ~/shell_scripts/multi_orb.sh
 |4,39,7,33,1709635236,"~/shell_scripts/multi_orb.sh"
 -'  7  33  ~/shell_scripts/multi_orb.sh
@@ -109,6 +141,14 @@
 |4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
 -'  7  33  ~/shell_scripts/multi_orb.sh
 |4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
+-'  7  33  ~/shell_scripts/multi_orb.sh
+|4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
 -'  17  48  ~/shell_scripts/multi_orb.sh
 |4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
 -'  17  48  ~/shell_scripts/multi_orb.sh
@@ -117,6 +157,22 @@
 |4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
 -'  17  48  ~/shell_scripts/multi_orb.sh
 |4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
+-'  17  48  ~/shell_scripts/multi_orb.sh
+|4,39,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
 -'  17  48  ~/shell_scripts/multi_orb.sh
 |4,39,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
 -'  17  48  ~/shell_scripts/multi_orb.sh
@@ -149,6 +205,38 @@
 |4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
 -'  6  10  ~/shell_scripts/multi_orb.sh
 |4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
+-'  6  10  ~/shell_scripts/multi_orb.sh
+|4,39,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
 -'  6  10  ~/shell_scripts/multi_orb.sh
 |4,39,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
 -'  6  10  ~/shell_scripts/multi_orb.sh
@@ -185,96 +273,12 @@
 |4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
 -'  8  0  ~/shell_scripts/multi_orb.sh
 |4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
+	*	1741019946	0
+	"	79	0
 
 > ~/colcon_ws/src/orb_slam3_ros2_wrapper/include/orb_slam3_ros2_wrapper/orb_slam3_interface.hpp
 	*	1740930633	0
