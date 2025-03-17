@@ -71,17 +71,12 @@ install(DIRECTORY launch params
 )
 
 # ------------------------
-# Multi-Map Fusion Executable
+# Map Merger Executable
 # ------------------------
-add_executable(orb_slam3_multi_map_fusion
-  src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp
-  src/multi_map_fusion/multi_map_fusion.cpp
-)
-
-ament_target_dependencies(orb_slam3_multi_map_fusion rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs)
-
-install(TARGETS orb_slam3_multi_map_fusion
+add_executable(map_merger_main src/map_merger/map_merger_main.cpp src/map_merger/map_merger.cpp)
+ament_target_dependencies(map_merger_main rclcpp)
+install(TARGETS
+  map_merger_main
   DESTINATION lib/${PROJECT_NAME}
 )
-
 ament_package()
