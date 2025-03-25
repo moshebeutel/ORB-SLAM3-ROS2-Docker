@@ -1,46 +1,31 @@
-// MapMerger.h
-#ifndef MAPMERGER_H
-#define MAPMERGER_H
+#ifndef MAP_MERGER_H
+#define MAP_MERGER_H
 
-#include <rclcpp/rclcpp.hpp>
-#include "LoopClosing.h"
-#include "Map.h"
-#include "MapPoint.h"
-#include "Atlas.h"
-#include "KeyFrameDatabase.h"
-#include "Vocabulary.h"
-#include <vector>
-#include <memory>
-#include <string>
-#include <tf2_ros/buffer.h>
-#include <tf2_ros/transform_listener.h>
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/point_cloud2.hpp"
+#include "slam_msgs/msg/map_data.hpp"
+#include "orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
 
-namespace ORB_SLAM3_Wrapper {
-
-class MapMerger : public rclcpp::Node {
+class MapMerger : public rclcpp::Node
+{
 public:
-    MapMerger(int max_robots); // Removed map and loop closer from parameters
-    ~MapMerger();
-
-    void mapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg, int robot_id);
-    std::vector<ORB_SLAM3::MapPoint *> convertPointCloudToMapPoints(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
-    void mergeMaps(const std::vector<ORB_SLAM3::MapPoint *> &new_map_points, int robot_id);
-    bool isCoVisible(ORB_SLAM3::MapPoint *mp);
+    MapMerger(); // Constructor
+    std::shared_ptr<ORB_SLAM3_Wrapper::ORBSLAM3Interface> getSLAMSystem();
 
 private:
-    std::vector<rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr>> subscribers_;
-    std::shared_ptr<ORB_SLAM3::Map> global_map_;
-    std::shared_ptr<ORB_SLAM3::LoopClosing> loop_closer_;
-    int max_robots_;
-    std::string global_frame_ = "map";
-    std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
-    std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
-    std::shared_ptr<ORB_SLAM3::Atlas> atlas_;
-    std::shared_ptr<ORB_SLAM3::KeyFrameDatabase> keyFrameDatabase_;
-    std::shared_ptr<ORB_SLAM3::Vocabulary> vocabulary_;
+    void robot1MapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
+    void robot2MapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
+    void checkMergeStatus();
+    void publishMergedMap();
 
+    rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr robot1_map_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr robot2_map_sub_;
+    rclcpp::Publisher<slam_msgs::msg::MapData>::SharedPtr merged_map_pub_;
+    rclcpp::TimerBase::SharedPtr merge_timer_;
+    sensor_msgs::msg::PointCloud2 robot1_map_cloud_;
+    sensor_msgs::msg::PointCloud2 robot2_map_cloud_;
+    std::unique_ptr<ORB_SLAM3_Wrapper::ORBSLAM3Interface> orb_slam_interface_;
+    
 };
 
-} // namespace ORB_SLAM3_Wrapper
-
-#endif // MAPMERGER_H
+#endif // MAP_MERGER_H

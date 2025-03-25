@@ -96,6 +96,12 @@ namespace ORB_SLAM3_Wrapper
             return typeConversions_;
         };
 
+        // -------------------------------------- Edit by Daphna --------------------------------------
+        std::shared_ptr<ORB_SLAM3::System> getSLAMSystem() const
+        {
+            return mSLAM_;
+        }
+
     private:
         std::shared_ptr<ORB_SLAM3::System> mSLAM_;
         std::shared_ptr<WrapperTypeConversions> typeConversions_;

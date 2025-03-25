@@ -73,10 +73,19 @@ install(DIRECTORY launch params
 # ------------------------
 # Map Merger Executable
 # ------------------------
-add_executable(map_merger_main src/map_merger/map_merger_main.cpp src/map_merger/map_merger.cpp)
-ament_target_dependencies(map_merger_main rclcpp)
+add_executable(map_merger
+               src/type_conversion.cpp
+               src/map_merger/map_merger.cpp
+               src/orb_slam3_interface.cpp)
+
+# Link dependencies
+ament_target_dependencies(map_merger
+  rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin tf2_ros tf2_eigen slam_msgs pcl_ros pcl_conversions PCL nav_msgs
+)
+target_link_libraries(map_merger ${PCL_LIBRARIES}) # If you use PCL
+
 install(TARGETS
-  map_merger_main
+  map_merger
   DESTINATION lib/${PROJECT_NAME}
 )
 ament_package()
