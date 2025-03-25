@@ -28,3 +28,4 @@ container_root/.debug
 container_root/profilers/**
 **perf**
 **.osa**
+.history/

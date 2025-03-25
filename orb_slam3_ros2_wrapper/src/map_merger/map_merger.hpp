@@ -25,7 +25,7 @@ private:
     sensor_msgs::msg::PointCloud2 robot1_map_cloud_;
     sensor_msgs::msg::PointCloud2 robot2_map_cloud_;
     std::unique_ptr<ORB_SLAM3_Wrapper::ORBSLAM3Interface> orb_slam_interface_;
-    
+
 };
 
 #endif // MAP_MERGER_H
