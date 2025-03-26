@@ -112,3 +112,4 @@ export ROS_LOCALHOST_ONLY=1
 cd
 sros
 sws
+export LD_LIBRARY_PATH=/home/orb/ORB_SLAM3/lib:$LD_LIBRARY_PATH

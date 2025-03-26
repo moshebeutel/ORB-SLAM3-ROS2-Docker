@@ -1,0 +1,26 @@
+[0.600s] Invoking command in '/root/build/orb_slam3_navigator': PYTHONPATH=/root/build/orb_slam3_navigator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/install/orb_slam3_navigator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /root/build/orb_slam3_navigator/build --no-deps symlink_data
+[0.849s] running develop
+[0.850s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.850s]   warnings.warn(
+[1.005s] running egg_info
+[1.005s] creating orb_slam3_navigator.egg-info
+[1.005s] writing orb_slam3_navigator.egg-info/PKG-INFO
+[1.005s] writing dependency_links to orb_slam3_navigator.egg-info/dependency_links.txt
+[1.005s] writing entry points to orb_slam3_navigator.egg-info/entry_points.txt
+[1.005s] writing requirements to orb_slam3_navigator.egg-info/requires.txt
+[1.006s] writing top-level names to orb_slam3_navigator.egg-info/top_level.txt
+[1.006s] writing manifest file 'orb_slam3_navigator.egg-info/SOURCES.txt'
+[1.007s] reading manifest file 'orb_slam3_navigator.egg-info/SOURCES.txt'
+[1.008s] writing manifest file 'orb_slam3_navigator.egg-info/SOURCES.txt'
+[1.009s] running build_ext
+[1.009s] Creating /root/install/orb_slam3_navigator/lib/python3.10/site-packages/orb-slam3-navigator.egg-link (link to .)
+[1.010s] Installing orb_slam3_navigator script to /root/install/orb_slam3_navigator/lib/orb_slam3_navigator
+[1.010s] 
+[1.010s] Installed /root/build/orb_slam3_navigator
+[1.010s] running symlink_data
+[1.011s] creating /root/install/orb_slam3_navigator/share/ament_index
+[1.011s] creating /root/install/orb_slam3_navigator/share/ament_index/resource_index
+[1.011s] creating /root/install/orb_slam3_navigator/share/ament_index/resource_index/packages
+[1.011s] symbolically linking /root/build/orb_slam3_navigator/resource/orb_slam3_navigator -> /root/install/orb_slam3_navigator/share/ament_index/resource_index/packages
+[1.011s] symbolically linking /root/build/orb_slam3_navigator/package.xml -> /root/install/orb_slam3_navigator/share/orb_slam3_navigator
+[1.037s] Invoked command in '/root/build/orb_slam3_navigator' returned '0': PYTHONPATH=/root/build/orb_slam3_navigator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/install/orb_slam3_navigator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /root/build/orb_slam3_navigator/build --no-deps symlink_data

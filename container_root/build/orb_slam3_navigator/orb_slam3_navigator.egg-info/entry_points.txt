@@ -1,0 +1,3 @@
+[console_scripts]
+orb_slam3_navigator = orb_slam3_navigator.orb_slam3_movement_controller:main
+

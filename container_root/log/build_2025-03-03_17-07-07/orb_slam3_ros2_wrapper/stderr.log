@@ -1,0 +1,33 @@
+[0mBuild type: Release[0m
+[0m** WARNING ** io features related to pcap will be disabled[0m
+[33mCMake Warning at CMakeLists.txt:109 (find_package):
+  By not providing "Findgtest.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "gtest", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "gtest" with any of
+  the following names:
+
+    gtestConfig.cmake
+    gtest-config.cmake
+
+  Add the installation prefix of "gtest" to CMAKE_PREFIX_PATH or set
+  "gtest_DIR" to a directory containing one of the above files.  If "gtest"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+[0m
+[31mCMake Error at CMakeLists.txt:93 (add_executable):
+  Cannot find source file:
+
+    src/orb_slam3_multi_map_fusion.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+[0m
+[31mCMake Error at CMakeLists.txt:93 (add_executable):
+  No SOURCES given to target: orb_slam3_multi_map_fusion
+
+[0m
+[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m

@@ -1,0 +1,1 @@
+/root/build/slam_msgs/rosidl_generator_py/slam_msgs/srv/_get_global_point_cloud.py

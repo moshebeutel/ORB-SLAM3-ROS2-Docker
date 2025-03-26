@@ -1,0 +1,53 @@
+[0.010s] Invoking command in '/root/build/orb_slam3_map_generator': AMENT_PREFIX_PATH=/root/install/slam_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/install/slam_msgs:/root/colcon_ws/install/orb_slam3_ros2_wrapper:/root/colcon_ws/install/orb_slam3_map_generator:/root/colcon_ws/install/slam_msgs:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble LD_LIBRARY_PATH=/root/install/slam_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/install/slam_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /root/build/orb_slam3_map_generator -- -j12 -l12
+[0.058s] [ 16%] [32mBuilding CXX object CMakeFiles/get_landmarks_simulator.dir/src/get_landmarks_simulator.cpp.o[0m
+[0.058s] [ 33%] [32mBuilding CXX object CMakeFiles/color_pcl.dir/src/color_pcl.cpp.o[0m
+[0.060s] [ 50%] [32mBuilding CXX object CMakeFiles/pointcloud_stitcher.dir/src/stitch_pcl.cpp.o[0m
+[0.547s] In file included from [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:10[m[K:
+[0.547s] [01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K-Wcpp[m[K]
+[0.547s]    32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+[0.547s]       |  [01;35m[K^~~~~~~[m[K
+[4.674s] [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:[m[K In member function ‘[01m[Kvoid MapPointsNode::handleGetLandmarksInView(std::shared_ptr<slam_msgs::srv::GetLandmarksInView_Request_<std::allocator<void> > >, std::shared_ptr<slam_msgs::srv::GetLandmarksInView_Response_<std::allocator<void> > >)[m[K’:
+[4.674s] [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:157:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdz[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[4.674s]   157 |             double [01;35m[Kdz[m[K = map_point.position.z - pose_z;
+[4.674s]       |                    [01;35m[K^~[m[K
+[8.998s] [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:[m[K In constructor ‘[01m[KPosePointCloudCollector::PosePointCloudCollector()[m[K’:
+[8.998s] [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:335:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KPosePointCloudCollector::buffer_duration_[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+[8.998s]   335 |     double [01;35m[Kbuffer_duration_[m[K;
+[8.998s]       |            [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[8.998s] [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:330:21:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ktf2_ros::Buffer PosePointCloudCollector::tf_buffer_[m[K’ [[01;35m[K-Wreorder[m[K]
+[8.998s]   330 |     tf2_ros::Buffer [01;35m[Ktf_buffer_[m[K;
+[8.999s]       |                     [01;35m[K^~~~~~~~~~[m[K
+[8.999s] [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:29:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+[9.006s]    29 |     [01;35m[KPosePointCloudCollector[m[K()
+[9.007s]       |     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[19.938s] [ 66%] [32m[1mLinking CXX executable get_landmarks_simulator[0m
+[20.640s] [ 66%] Built target get_landmarks_simulator
+[30.096s] [ 83%] [32m[1mLinking CXX executable color_pcl[0m
+[30.482s] /usr/bin/ld: warning: libopencv_imgcodecs.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.4
+[30.487s] /usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.4
+[31.060s] [ 83%] Built target color_pcl
+[33.588s] [100%] [32m[1mLinking CXX executable pointcloud_stitcher[0m
+[34.287s] [100%] Built target pointcloud_stitcher
+[34.299s] Invoked command in '/root/build/orb_slam3_map_generator' returned '0': AMENT_PREFIX_PATH=/root/install/slam_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/install/slam_msgs:/root/colcon_ws/install/orb_slam3_ros2_wrapper:/root/colcon_ws/install/orb_slam3_map_generator:/root/colcon_ws/install/slam_msgs:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble LD_LIBRARY_PATH=/root/install/slam_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/install/slam_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /root/build/orb_slam3_map_generator -- -j12 -l12
+[34.327s] Invoking command in '/root/build/orb_slam3_map_generator': AMENT_PREFIX_PATH=/root/install/slam_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/install/slam_msgs:/root/colcon_ws/install/orb_slam3_ros2_wrapper:/root/colcon_ws/install/orb_slam3_map_generator:/root/colcon_ws/install/slam_msgs:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble LD_LIBRARY_PATH=/root/install/slam_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/install/slam_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /root/build/orb_slam3_map_generator
+[34.334s] -- Install configuration: "Release"
+[34.334s] -- Execute custom install script
+[34.335s] -- Symlinking: /root/install/orb_slam3_map_generator/lib/orb_slam3_map_generator/pointcloud_stitcher
+[34.343s] -- Symlinking: /root/install/orb_slam3_map_generator/lib/orb_slam3_map_generator/color_pcl
+[34.351s] -- Symlinking: /root/install/orb_slam3_map_generator/lib/orb_slam3_map_generator/get_landmarks_simulator
+[34.359s] -- Symlinking: /root/install/orb_slam3_map_generator/share/ament_index/resource_index/package_run_dependencies/orb_slam3_map_generator
+[34.367s] -- Symlinking: /root/install/orb_slam3_map_generator/share/ament_index/resource_index/parent_prefix_path/orb_slam3_map_generator
+[34.375s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/ament_prefix_path.sh
+[34.383s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/ament_prefix_path.dsv
+[34.391s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/path.sh
+[34.399s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/path.dsv
+[34.407s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.bash
+[34.415s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.sh
+[34.423s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.zsh
+[34.431s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.dsv
+[34.440s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/package.dsv
+[34.448s] -- Symlinking: /root/install/orb_slam3_map_generator/share/ament_index/resource_index/packages/orb_slam3_map_generator
+[34.456s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/cmake/orb_slam3_map_generatorConfig.cmake
+[34.464s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/cmake/orb_slam3_map_generatorConfig-version.cmake
+[34.472s] -- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/package.xml
+[34.483s] Invoked command in '/root/build/orb_slam3_map_generator' returned '0': AMENT_PREFIX_PATH=/root/install/slam_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/install/slam_msgs:/root/colcon_ws/install/orb_slam3_ros2_wrapper:/root/colcon_ws/install/orb_slam3_map_generator:/root/colcon_ws/install/slam_msgs:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble LD_LIBRARY_PATH=/root/install/slam_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/install/slam_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /root/build/orb_slam3_map_generator

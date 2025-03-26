@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating orb_slam3_navigator.egg-info
+writing orb_slam3_navigator.egg-info/PKG-INFO
+writing dependency_links to orb_slam3_navigator.egg-info/dependency_links.txt
+writing entry points to orb_slam3_navigator.egg-info/entry_points.txt
+writing requirements to orb_slam3_navigator.egg-info/requires.txt
+writing top-level names to orb_slam3_navigator.egg-info/top_level.txt
+writing manifest file 'orb_slam3_navigator.egg-info/SOURCES.txt'
+reading manifest file 'orb_slam3_navigator.egg-info/SOURCES.txt'
+writing manifest file 'orb_slam3_navigator.egg-info/SOURCES.txt'
+running build_ext
+Creating /root/install/orb_slam3_navigator/lib/python3.10/site-packages/orb-slam3-navigator.egg-link (link to .)
+Installing orb_slam3_navigator script to /root/install/orb_slam3_navigator/lib/orb_slam3_navigator
+
+Installed /root/build/orb_slam3_navigator
+running symlink_data
+creating /root/install/orb_slam3_navigator/share/ament_index
+creating /root/install/orb_slam3_navigator/share/ament_index/resource_index
+creating /root/install/orb_slam3_navigator/share/ament_index/resource_index/packages
+symbolically linking /root/build/orb_slam3_navigator/resource/orb_slam3_navigator -> /root/install/orb_slam3_navigator/share/ament_index/resource_index/packages
+symbolically linking /root/build/orb_slam3_navigator/package.xml -> /root/install/orb_slam3_navigator/share/orb_slam3_navigator

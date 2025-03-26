@@ -1,0 +1,29 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/get_landmarks_simulator.dir/src/get_landmarks_simulator.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/color_pcl.dir/src/color_pcl.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/pointcloud_stitcher.dir/src/stitch_pcl.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable get_landmarks_simulator[0m
+[ 66%] Built target get_landmarks_simulator
+[ 83%] [32m[1mLinking CXX executable color_pcl[0m
+[ 83%] Built target color_pcl
+[100%] [32m[1mLinking CXX executable pointcloud_stitcher[0m
+[100%] Built target pointcloud_stitcher
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /root/install/orb_slam3_map_generator/lib/orb_slam3_map_generator/pointcloud_stitcher
+-- Symlinking: /root/install/orb_slam3_map_generator/lib/orb_slam3_map_generator/color_pcl
+-- Symlinking: /root/install/orb_slam3_map_generator/lib/orb_slam3_map_generator/get_landmarks_simulator
+-- Symlinking: /root/install/orb_slam3_map_generator/share/ament_index/resource_index/package_run_dependencies/orb_slam3_map_generator
+-- Symlinking: /root/install/orb_slam3_map_generator/share/ament_index/resource_index/parent_prefix_path/orb_slam3_map_generator
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/ament_prefix_path.sh
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/ament_prefix_path.dsv
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/path.sh
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/environment/path.dsv
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.bash
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.sh
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.zsh
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/local_setup.dsv
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/package.dsv
+-- Symlinking: /root/install/orb_slam3_map_generator/share/ament_index/resource_index/packages/orb_slam3_map_generator
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/cmake/orb_slam3_map_generatorConfig.cmake
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/cmake/orb_slam3_map_generatorConfig-version.cmake
+-- Symlinking: /root/install/orb_slam3_map_generator/share/orb_slam3_map_generator/package.xml

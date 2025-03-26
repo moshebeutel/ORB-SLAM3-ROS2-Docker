@@ -513,3 +513,35 @@ vim src/orb_slam3_interface.cpp
 cd include/orb_slam3_ros2_wrapper/
 vim orb_slam3_interface.hpp 
 exit
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+colcon build --clean-from-cache
+colcon build --help
+colcon build --help | grep clean
+colcon build --cmake-clean-cache
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+colcon build --cmake-clean-cache
+. install/setup.bash 
+ls
+cd ..
+ls
+cd colcon_ws/
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+exit
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+cd colcon_ws/
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+source install/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+find / -name libORB_SLAM3.so 2>/dev/null
+cd
+find / -name libORB_SLAM3.so 2>/dev/null
+ENV LD_LIBRARY_PATH=/home/orb/ORB_SLAM3/lib:$LD_LIBRARY_PATH
+exit
+cd colcon_ws/
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+cd /home/orb/ORB_SLAM3/
+cd /home/orb/
+ls
+exit

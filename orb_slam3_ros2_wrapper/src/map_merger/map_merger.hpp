@@ -24,6 +24,8 @@ private:
     rclcpp::TimerBase::SharedPtr merge_timer_;
     sensor_msgs::msg::PointCloud2 robot1_map_cloud_;
     sensor_msgs::msg::PointCloud2 robot2_map_cloud_;
+    geometry_msgs::msg::PoseStamped robot1_pose_;
+    geometry_msgs::msg::PoseStamped robot2_pose_;
     std::unique_ptr<ORB_SLAM3_Wrapper::ORBSLAM3Interface> orb_slam_interface_;
 
 };

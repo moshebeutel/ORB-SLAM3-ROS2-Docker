@@ -1,0 +1,397 @@
+[0.020s] Invoking command in '/root/build/slam_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble /usr/bin/cmake /root/colcon_ws/src/slam_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/install/slam_msgs
+[0.073s] -- The C compiler identification is GNU 11.4.0
+[0.125s] -- The CXX compiler identification is GNU 11.4.0
+[0.132s] -- Detecting C compiler ABI info
+[0.192s] -- Detecting C compiler ABI info - done
+[0.200s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.200s] -- Detecting C compile features
+[0.200s] -- Detecting C compile features - done
+[0.203s] -- Detecting CXX compiler ABI info
+[0.277s] -- Detecting CXX compiler ABI info - done
+[0.287s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.288s] -- Detecting CXX compile features
+[0.288s] -- Detecting CXX compile features - done
+[0.292s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.439s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.502s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.536s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.583s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.589s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.599s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.614s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.633s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.683s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.686s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.772s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.804s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.854s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.866s] -- Looking for pthread.h
+[0.941s] -- Looking for pthread.h - found
+[0.941s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.009s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.010s] -- Found Threads: TRUE  
+[1.068s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.085s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.104s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.484s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.958s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.137s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.160s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.162s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.188s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.188s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.188s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.188s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.211s] -- Found PythonExtra: .so  
+[2.303s] -- Configuring done
+[2.351s] -- Generating done
+[2.354s] -- Build files have been written to: /root/build/slam_msgs
+[2.365s] Invoked command in '/root/build/slam_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble /usr/bin/cmake /root/colcon_ws/src/slam_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/install/slam_msgs
+[2.366s] Invoking command in '/root/build/slam_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble /usr/bin/cmake --build /root/build/slam_msgs -- -j12 -l12
+[2.406s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.416s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.423s] [  2%] Built target ament_cmake_python_symlink_slam_msgs
+[2.665s] running egg_info
+[2.666s] creating slam_msgs.egg-info
+[2.666s] writing slam_msgs.egg-info/PKG-INFO
+[2.666s] writing dependency_links to slam_msgs.egg-info/dependency_links.txt
+[2.666s] writing top-level names to slam_msgs.egg-info/top_level.txt
+[2.666s] writing manifest file 'slam_msgs.egg-info/SOURCES.txt'
+[2.668s] reading manifest file 'slam_msgs.egg-info/SOURCES.txt'
+[2.669s] writing manifest file 'slam_msgs.egg-info/SOURCES.txt'
+[2.694s] [  2%] Built target ament_cmake_python_build_slam_msgs_egg
+[3.306s] [  2%] Built target slam_msgs__cpp
+[3.324s] [  3%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.328s] [  4%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.329s] [  5%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.381s] [ 10%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/msg/detail/map_data__functions.c.o[0m
+[3.383s] [ 10%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/srv/detail/get_map__functions.c.o[0m
+[3.383s] [ 10%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/msg/detail/map_graph__functions.c.o[0m
+[3.383s] [ 11%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/msg/detail/key_frame__functions.c.o[0m
+[3.383s] [ 11%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/msg/detail/map_point__functions.c.o[0m
+[3.383s] [ 13%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/srv/detail/get_global_point_cloud__functions.c.o[0m
+[3.383s] [ 13%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/srv/detail/get_landmarks_in_view__functions.c.o[0m
+[3.384s] [ 14%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_c.dir/rosidl_generator_c/slam_msgs/srv/detail/get_all_landmarks_in_map__functions.c.o[0m
+[3.490s] [ 16%] [32m[1mLinking C shared library libslam_msgs__rosidl_generator_c.so[0m
+[3.536s] [ 16%] Built target slam_msgs__rosidl_generator_c
+[3.548s] [ 17%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.548s] [ 18%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.551s] [ 19%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[4.031s] [ 21%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/msg/map_data__type_support.cpp.o[0m
+[4.031s] [ 20%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/msg/map_graph__type_support.cpp.o[0m
+[4.031s] [ 22%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/msg/key_frame__type_support.cpp.o[0m
+[4.031s] [ 24%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/srv/get_map__type_support.cpp.o[0m
+[4.033s] [ 25%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/msg/map_point__type_support.cpp.o[0m
+[4.035s] [ 26%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/srv/get_all_landmarks_in_map__type_support.cpp.o[0m
+[4.046s] [ 27%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/srv/get_landmarks_in_view__type_support.cpp.o[0m
+[4.486s] [ 28%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/msg/map_graph__type_support.cpp.o[0m
+[4.532s] [ 29%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/msg/map_data__type_support.cpp.o[0m
+[4.554s] [ 31%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/msg/key_frame__type_support.cpp.o[0m
+[4.560s] [ 32%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/msg/map_point__type_support.cpp.o[0m
+[4.563s] [ 33%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/srv/get_map__type_support.cpp.o[0m
+[4.578s] [ 34%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/slam_msgs/srv/get_global_point_cloud__type_support.cpp.o[0m
+[4.591s] [ 35%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/srv/get_landmarks_in_view__type_support.cpp.o[0m
+[4.606s] [ 36%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/srv/get_all_landmarks_in_map__type_support.cpp.o[0m
+[4.640s] [ 37%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/slam_msgs/srv/get_global_point_cloud__type_support.cpp.o[0m
+[4.665s] [ 40%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/msg/detail/dds_fastrtps/key_frame__type_support.cpp.o[0m
+[4.666s] [ 41%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/msg/detail/dds_fastrtps/map_point__type_support.cpp.o[0m
+[4.668s] [ 41%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/msg/detail/dds_fastrtps/map_graph__type_support.cpp.o[0m
+[4.669s] [ 42%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/msg/detail/dds_fastrtps/map_data__type_support.cpp.o[0m
+[4.670s] [ 43%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/srv/detail/dds_fastrtps/get_map__type_support.cpp.o[0m
+[4.673s] [ 45%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/msg/detail/map_graph__type_support.cpp.o[0m
+[4.673s] [ 45%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/srv/detail/dds_fastrtps/get_landmarks_in_view__type_support.cpp.o[0m
+[4.673s] [ 47%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/srv/detail/dds_fastrtps/get_all_landmarks_in_map__type_support.cpp.o[0m
+[4.694s] [ 48%] [32m[1mLinking CXX shared library libslam_msgs__rosidl_typesupport_c.so[0m
+[4.707s] [ 49%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/msg/detail/map_graph__type_support.c.o[0m
+[4.773s] [ 49%] Built target slam_msgs__rosidl_typesupport_c
+[4.788s] [ 50%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/slam_msgs/srv/detail/dds_fastrtps/get_global_point_cloud__type_support.cpp.o[0m
+[4.804s] [ 51%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/msg/detail/map_data__type_support.c.o[0m
+[4.888s] [ 52%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/msg/detail/key_frame__type_support.c.o[0m
+[5.014s] [ 54%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/msg/detail/map_point__type_support.c.o[0m
+[5.028s] [ 55%] [32m[1mLinking CXX shared library libslam_msgs__rosidl_typesupport_cpp.so[0m
+[5.107s] [ 56%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/srv/detail/get_map__type_support.c.o[0m
+[5.124s] [ 56%] Built target slam_msgs__rosidl_typesupport_cpp
+[5.157s] [ 57%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/srv/detail/get_landmarks_in_view__type_support.c.o[0m
+[5.213s] [ 58%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/msg/detail/map_data__type_support.cpp.o[0m
+[5.223s] [ 59%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/srv/detail/get_all_landmarks_in_map__type_support.c.o[0m
+[5.301s] [ 60%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/slam_msgs/srv/detail/get_global_point_cloud__type_support.c.o[0m
+[5.309s] [ 62%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/msg/detail/map_graph__type_support_c.cpp.o[0m
+[5.389s] [ 63%] [32m[1mLinking C shared library libslam_msgs__rosidl_typesupport_introspection_c.so[0m
+[5.489s] [ 64%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/msg/detail/key_frame__type_support.cpp.o[0m
+[5.495s] [ 64%] Built target slam_msgs__rosidl_typesupport_introspection_c
+[5.498s] [ 65%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/msg/detail/map_point__type_support.cpp.o[0m
+[5.509s] [ 66%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/msg/detail/map_data__type_support_c.cpp.o[0m
+[5.523s] [ 67%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/msg/detail/key_frame__type_support_c.cpp.o[0m
+[5.547s] [ 68%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/srv/detail/get_map__type_support.cpp.o[0m
+[5.550s] [ 70%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/msg/detail/map_point__type_support_c.cpp.o[0m
+[5.580s] [ 71%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/srv/detail/get_map__type_support_c.cpp.o[0m
+[5.585s] [ 72%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/srv/detail/get_landmarks_in_view__type_support.cpp.o[0m
+[5.623s] [ 73%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/srv/detail/get_landmarks_in_view__type_support_c.cpp.o[0m
+[5.707s] [ 74%] [32m[1mLinking CXX shared library libslam_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[5.957s] [ 74%] Built target slam_msgs__rosidl_typesupport_fastrtps_cpp
+[5.975s] [ 75%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/srv/detail/get_all_landmarks_in_map__type_support_c.cpp.o[0m
+[5.998s] [ 77%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/srv/detail/get_all_landmarks_in_map__type_support.cpp.o[0m
+[6.159s] [ 78%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/slam_msgs/srv/detail/get_global_point_cloud__type_support.cpp.o[0m
+[6.176s] [ 79%] [32mBuilding CXX object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/slam_msgs/srv/detail/get_global_point_cloud__type_support_c.cpp.o[0m
+[6.561s] [ 80%] [32m[1mLinking CXX shared library libslam_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[6.626s] [ 81%] [32m[1mLinking CXX shared library libslam_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[6.648s] [ 81%] Built target slam_msgs__rosidl_typesupport_fastrtps_c
+[6.723s] [ 81%] Built target slam_msgs__rosidl_typesupport_introspection_cpp
+[6.743s] [ 81%] Built target slam_msgs
+[6.764s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[8.277s] [ 82%] Built target slam_msgs__py
+[8.297s] [ 83%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/msg/_map_data_s.c.o[0m
+[8.299s] [ 85%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/srv/_get_map_s.c.o[0m
+[8.299s] [ 86%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/msg/_map_graph_s.c.o[0m
+[8.299s] [ 88%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/msg/_key_frame_s.c.o[0m
+[8.299s] [ 88%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/msg/_map_point_s.c.o[0m
+[8.300s] [ 89%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/srv/_get_landmarks_in_view_s.c.o[0m
+[8.300s] [ 90%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/srv/_get_all_landmarks_in_map_s.c.o[0m
+[8.301s] [ 91%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_generator_py.dir/rosidl_generator_py/slam_msgs/srv/_get_global_point_cloud_s.c.o[0m
+[8.474s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/slam_msgs/libslam_msgs__rosidl_generator_py.so[0m
+[8.519s] [ 93%] Built target slam_msgs__rosidl_generator_py
+[8.537s] [ 96%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/slam_msgs/_slam_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[8.537s] [ 96%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/slam_msgs/_slam_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[8.537s] [ 96%] [32mBuilding C object CMakeFiles/slam_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/slam_msgs/_slam_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[8.673s] [100%] [32m[1mLinking C shared library rosidl_generator_py/slam_msgs/slam_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.674s] [100%] [32m[1mLinking C shared library rosidl_generator_py/slam_msgs/slam_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.674s] [100%] [32m[1mLinking C shared library rosidl_generator_py/slam_msgs/slam_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.715s] [100%] Built target slam_msgs__rosidl_typesupport_introspection_c__pyext
+[8.715s] [100%] Built target slam_msgs__rosidl_typesupport_fastrtps_c__pyext
+[8.715s] [100%] Built target slam_msgs__rosidl_typesupport_c__pyext
+[8.728s] Invoked command in '/root/build/slam_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble /usr/bin/cmake --build /root/build/slam_msgs -- -j12 -l12
+[8.891s] Invoking command in '/root/build/slam_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble /usr/bin/cmake --install /root/build/slam_msgs
+[8.899s] -- Install configuration: ""
+[8.900s] -- Execute custom install script
+[8.900s] -- Symlinking: /root/install/slam_msgs/share/ament_index/resource_index/rosidl_interfaces/slam_msgs
+[8.910s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__functions.h
+[8.917s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__struct.h
+[8.925s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__type_support.h
+[8.932s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__functions.h
+[8.940s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__struct.h
+[8.948s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__type_support.h
+[8.959s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__functions.h
+[8.968s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__struct.h
+[8.979s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__type_support.h
+[8.988s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__functions.h
+[8.998s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__struct.h
+[9.007s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__type_support.h
+[9.017s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/key_frame.h
+[9.028s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/map_data.h
+[9.037s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/map_graph.h
+[9.046s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/map_point.h
+[9.053s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/rosidl_generator_c__visibility_control.h
+[9.061s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__functions.h
+[9.069s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__struct.h
+[9.076s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__type_support.h
+[9.084s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__functions.h
+[9.092s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__struct.h
+[9.100s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__type_support.h
+[9.108s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__functions.h
+[9.115s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__struct.h
+[9.124s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__type_support.h
+[9.132s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__functions.h
+[9.139s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__struct.h
+[9.147s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__type_support.h
+[9.154s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_all_landmarks_in_map.h
+[9.163s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_global_point_cloud.h
+[9.171s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_landmarks_in_view.h
+[9.179s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_map.h
+[9.186s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/library_path.sh
+[9.195s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/library_path.dsv
+[9.202s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__rosidl_typesupport_fastrtps_c.h
+[9.211s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__rosidl_typesupport_fastrtps_c.h
+[9.218s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__rosidl_typesupport_fastrtps_c.h
+[9.226s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__rosidl_typesupport_fastrtps_c.h
+[9.233s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[9.241s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__rosidl_typesupport_fastrtps_c.h
+[9.249s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__rosidl_typesupport_fastrtps_c.h
+[9.257s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__rosidl_typesupport_fastrtps_c.h
+[9.265s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__rosidl_typesupport_fastrtps_c.h
+[9.274s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__builder.hpp
+[9.282s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__struct.hpp
+[9.291s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__traits.hpp
+[9.299s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__builder.hpp
+[9.307s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__struct.hpp
+[9.314s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__traits.hpp
+[9.322s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__builder.hpp
+[9.330s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__struct.hpp
+[9.337s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__traits.hpp
+[9.345s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__builder.hpp
+[9.352s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__struct.hpp
+[9.361s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__traits.hpp
+[9.373s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/key_frame.hpp
+[9.386s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/map_data.hpp
+[9.396s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/map_graph.hpp
+[9.404s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/map_point.hpp
+[9.413s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__builder.hpp
+[9.421s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__struct.hpp
+[9.430s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__traits.hpp
+[9.438s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__builder.hpp
+[9.446s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__struct.hpp
+[9.453s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__traits.hpp
+[9.462s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__builder.hpp
+[9.469s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__struct.hpp
+[9.476s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__traits.hpp
+[9.484s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__builder.hpp
+[9.493s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__struct.hpp
+[9.501s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__traits.hpp
+[9.508s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_all_landmarks_in_map.hpp
+[9.516s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_global_point_cloud.hpp
+[9.524s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_landmarks_in_view.hpp
+[9.533s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/get_map.hpp
+[9.542s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__rosidl_typesupport_fastrtps_cpp.hpp
+[9.550s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__rosidl_typesupport_fastrtps_cpp.hpp
+[9.558s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__rosidl_typesupport_fastrtps_cpp.hpp
+[9.567s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__rosidl_typesupport_fastrtps_cpp.hpp
+[9.576s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[9.584s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__rosidl_typesupport_fastrtps_cpp.hpp
+[9.592s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__rosidl_typesupport_fastrtps_cpp.hpp
+[9.599s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__rosidl_typesupport_fastrtps_cpp.hpp
+[9.607s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__rosidl_typesupport_fastrtps_cpp.hpp
+[9.616s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__rosidl_typesupport_introspection_c.h
+[9.624s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__rosidl_typesupport_introspection_c.h
+[9.633s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__rosidl_typesupport_introspection_c.h
+[9.640s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__rosidl_typesupport_introspection_c.h
+[9.649s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[9.661s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__rosidl_typesupport_introspection_c.h
+[9.671s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__rosidl_typesupport_introspection_c.h
+[9.679s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__rosidl_typesupport_introspection_c.h
+[9.688s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__rosidl_typesupport_introspection_c.h
+[9.698s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/key_frame__rosidl_typesupport_introspection_cpp.hpp
+[9.706s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_data__rosidl_typesupport_introspection_cpp.hpp
+[9.714s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_graph__rosidl_typesupport_introspection_cpp.hpp
+[9.721s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/msg/detail/map_point__rosidl_typesupport_introspection_cpp.hpp
+[9.729s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_all_landmarks_in_map__rosidl_typesupport_introspection_cpp.hpp
+[9.737s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_global_point_cloud__rosidl_typesupport_introspection_cpp.hpp
+[9.748s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_landmarks_in_view__rosidl_typesupport_introspection_cpp.hpp
+[9.758s] -- Symlinking: /root/install/slam_msgs/include/slam_msgs/slam_msgs/srv/detail/get_map__rosidl_typesupport_introspection_cpp.hpp
+[9.767s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/pythonpath.sh
+[9.775s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/pythonpath.dsv
+[9.783s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs-1.0.0-py3.10.egg-info/PKG-INFO
+[9.791s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs-1.0.0-py3.10.egg-info/SOURCES.txt
+[9.799s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs-1.0.0-py3.10.egg-info/dependency_links.txt
+[9.807s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs-1.0.0-py3.10.egg-info/top_level.txt
+[9.816s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/__init__.py
+[9.823s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/_slam_msgs_s.ep.rosidl_typesupport_c.c
+[9.831s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/_slam_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[9.839s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/_slam_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[9.847s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/libslam_msgs__rosidl_generator_py.so
+[9.854s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/__init__.py
+[9.862s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_key_frame.py
+[9.870s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_key_frame_s.c
+[9.879s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_data.py
+[9.886s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_data_s.c
+[9.895s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_graph.py
+[9.902s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_graph_s.c
+[9.910s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_point.py
+[9.917s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_point_s.c
+[9.926s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/slam_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.933s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/slam_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.941s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/slam_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.949s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/__init__.py
+[9.956s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_all_landmarks_in_map.py
+[9.964s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_all_landmarks_in_map_s.c
+[9.971s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_global_point_cloud.py
+[9.979s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_global_point_cloud_s.c
+[9.987s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_landmarks_in_view.py
+[9.995s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_landmarks_in_view_s.c
+[10.003s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_map.py
+[10.011s] -- Symlinking: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_map_s.c
+[10.019s] -- Up-to-date symlink: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/slam_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[10.019s] -- Up-to-date symlink: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/slam_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[10.020s] -- Up-to-date symlink: /root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/slam_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[10.020s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/MapGraph.idl
+[10.028s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/MapData.idl
+[10.037s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/KeyFrame.idl
+[10.045s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/MapPoint.idl
+[10.053s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetMap.idl
+[10.062s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetLandmarksInView.idl
+[10.070s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetAllLandmarksInMap.idl
+[10.079s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetGlobalPointCloud.idl
+[10.087s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/MapGraph.msg
+[10.097s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/MapData.msg
+[10.105s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/KeyFrame.msg
+[10.113s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/msg/MapPoint.msg
+[10.122s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetMap.srv
+[10.130s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetMap_Request.msg
+[10.138s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetMap_Response.msg
+[10.146s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetLandmarksInView.srv
+[10.154s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetLandmarksInView_Request.msg
+[10.162s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetLandmarksInView_Response.msg
+[10.170s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetAllLandmarksInMap.srv
+[10.178s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetAllLandmarksInMap_Request.msg
+[10.186s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetAllLandmarksInMap_Response.msg
+[10.195s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetGlobalPointCloud.srv
+[10.202s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetGlobalPointCloud_Request.msg
+[10.211s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/srv/GetGlobalPointCloud_Response.msg
+[10.218s] -- Symlinking: /root/install/slam_msgs/share/ament_index/resource_index/package_run_dependencies/slam_msgs
+[10.226s] -- Symlinking: /root/install/slam_msgs/share/ament_index/resource_index/parent_prefix_path/slam_msgs
+[10.234s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/ament_prefix_path.sh
+[10.241s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/ament_prefix_path.dsv
+[10.249s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/path.sh
+[10.256s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/environment/path.dsv
+[10.264s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/local_setup.bash
+[10.272s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/local_setup.sh
+[10.280s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/local_setup.zsh
+[10.288s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/local_setup.dsv
+[10.297s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/package.dsv
+[10.305s] -- Symlinking: /root/install/slam_msgs/share/ament_index/resource_index/packages/slam_msgs
+[10.313s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/rosidl_cmake-extras.cmake
+[10.321s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[10.329s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[10.337s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[10.345s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[10.352s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[10.360s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[10.368s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgsConfig.cmake
+[10.376s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgsConfig-version.cmake
+[10.384s] -- Symlinking: /root/install/slam_msgs/share/slam_msgs/package.xml
+[10.393s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_generator_c.so
+[10.394s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_generator_c.so" to ""
+[10.394s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_fastrtps_c.so
+[10.394s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[10.394s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_fastrtps_cpp.so
+[10.395s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[10.395s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_introspection_c.so
+[10.396s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_introspection_c.so" to ""
+[10.396s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_c.so
+[10.397s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_c.so" to ""
+[10.397s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_introspection_cpp.so
+[10.397s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[10.397s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_cpp.so
+[10.398s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_typesupport_cpp.so" to ""
+[10.448s] Listing '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs'...
+[10.448s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/__init__.py'...
+[10.448s] Listing '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg'...
+[10.448s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/__init__.py'...
+[10.448s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_key_frame.py'...
+[10.448s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_data.py'...
+[10.448s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_graph.py'...
+[10.449s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/msg/_map_point.py'...
+[10.449s] Listing '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv'...
+[10.449s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/__init__.py'...
+[10.449s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_all_landmarks_in_map.py'...
+[10.449s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_global_point_cloud.py'...
+[10.449s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_landmarks_in_view.py'...
+[10.449s] Compiling '/root/install/slam_msgs/local/lib/python3.10/dist-packages/slam_msgs/srv/_get_map.py'...
+[10.452s] -- Installing: /root/install/slam_msgs/lib/libslam_msgs__rosidl_generator_py.so
+[10.453s] -- Set runtime path of "/root/install/slam_msgs/lib/libslam_msgs__rosidl_generator_py.so" to ""
+[10.453s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_generator_cExport.cmake
+[10.453s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_generator_cExport-noconfig.cmake
+[10.453s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[10.453s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[10.453s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_generator_cppExport.cmake
+[10.453s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_introspection_cExport.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_cExport.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[10.454s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_cppExport.cmake
+[10.455s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/slam_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[10.455s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_generator_pyExport.cmake
+[10.455s] -- Installing: /root/install/slam_msgs/share/slam_msgs/cmake/export_slam_msgs__rosidl_generator_pyExport-noconfig.cmake
+[10.457s] Invoked command in '/root/build/slam_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/colcon_ws/install/orb_slam3_navigator:/opt/ros/humble /usr/bin/cmake --install /root/build/slam_msgs
