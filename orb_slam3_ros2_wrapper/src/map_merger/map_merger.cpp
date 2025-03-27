@@ -8,6 +8,35 @@ MapMerger::MapMerger() : Node("map_merger")
     robot2_map_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
         "/robot_1/map_points", 10, std::bind(&MapMerger::robot2MapCallback, this, std::placeholders::_1));
 
+    // Odometry subscription for Robot 1
+    robot1_odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+        "/robot_0/ground_truth_pose", 10,
+        [this](const nav_msgs::msg::Odometry::SharedPtr odom_msg) {
+            RCLCPP_INFO(this->get_logger(), "Odometry callback triggered for Robot 1.");
+
+            // Update Robot 0's pose from the odometry message
+            robot1_pose_.pose = odom_msg->pose.pose;
+
+            RCLCPP_INFO(this->get_logger(), "Robot 1 pose updated from odometry: [%.2f, %.2f, %.2f]",
+                        robot1_pose_.pose.position.x, robot1_pose_.pose.position.y, robot1_pose_.pose.position.z);
+        });
+
+    // Odometry subscription for Robot 2
+    robot2_odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
+        "/robot_1/ground_truth_pose", 10,
+        [this](const nav_msgs::msg::Odometry::SharedPtr odom_msg) {
+            RCLCPP_INFO(this->get_logger(), "Odometry callback triggered for Robot 2.");
+
+            // Update Robot 2's pose from the odometry message
+            robot2_pose_.pose = odom_msg->pose.pose;
+
+            RCLCPP_INFO(this->get_logger(), "Robot 2 pose updated from odometry: [%.2f, %.2f, %.2f]",
+                        robot2_pose_.pose.position.x, robot2_pose_.pose.position.y, robot2_pose_.pose.position.z);
+        });
+
+    RCLCPP_INFO(this->get_logger(), "Subscribed to /robot_0/ground_truth_pose for Robot 1 odometry.");
+    RCLCPP_INFO(this->get_logger(), "Subscribed to /robot_1/ground_truth_pose for Robot 2 odometry.");
+
     // Publisher for merged map data
     merged_map_pub_ = this->create_publisher<slam_msgs::msg::MapData>("/merged_map", 10);
 
@@ -46,11 +75,7 @@ void MapMerger::robot2MapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr
     // Store Robot 2's map point cloud
     robot2_map_cloud_ = *msg;
 
-    // Retrieve and store Robot 2's current pose
-    orb_slam_interface_->getRobotPose(robot2_pose_);
-
-    RCLCPP_INFO(this->get_logger(), "Robot 2 map point cloud processed. Pose: [%.2f, %.2f, %.2f]",
-                robot2_pose_.pose.position.x, robot2_pose_.pose.position.y, robot2_pose_.pose.position.z);
+    RCLCPP_INFO(this->get_logger(), "Robot 2 map point cloud processed.");
 }
 
 void MapMerger::checkMergeStatus()

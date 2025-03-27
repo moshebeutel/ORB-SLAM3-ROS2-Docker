@@ -20,6 +20,8 @@ private:
 
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr robot1_map_sub_;
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr robot2_map_sub_;
+    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr robot1_odom_sub_;
+    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr robot2_odom_sub_;
     rclcpp::Publisher<slam_msgs::msg::MapData>::SharedPtr merged_map_pub_;
     rclcpp::TimerBase::SharedPtr merge_timer_;
     sensor_msgs::msg::PointCloud2 robot1_map_cloud_;
