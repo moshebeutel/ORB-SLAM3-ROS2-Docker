@@ -1,0 +1,33 @@
+[0mBuild type: Release[0m
+[33mCMake Warning (dev) at CMakeLists.txt:39 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  CMake variable PCL_ROOT is set to:
+
+    /usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+In file included from [01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K-Wcpp[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:[m[K In member function ‘[01m[Kvoid MapPointsNode::handleGetLandmarksInView(std::shared_ptr<slam_msgs::srv::GetLandmarksInView_Request_<std::allocator<void> > >, std::shared_ptr<slam_msgs::srv::GetLandmarksInView_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/get_landmarks_simulator.cpp:157:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdz[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  157 |             double [01;35m[Kdz[m[K = map_point.position.z - pose_z;
+      |                    [01;35m[K^~[m[K
+[01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:[m[K In constructor ‘[01m[KPosePointCloudCollector::PosePointCloudCollector()[m[K’:
+[01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:335:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KPosePointCloudCollector::buffer_duration_[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+  335 |     double [01;35m[Kbuffer_duration_[m[K;
+      |            [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:330:21:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ktf2_ros::Buffer PosePointCloudCollector::tf_buffer_[m[K’ [[01;35m[K-Wreorder[m[K]
+  330 |     tf2_ros::Buffer [01;35m[Ktf_buffer_[m[K;
+      |                     [01;35m[K^~~~~~~~~~[m[K
+[01m[K/root/colcon_ws/src/orb_slam3_map_generator/src/stitch_pcl.cpp:29:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   29 |     [01;35m[KPosePointCloudCollector[m[K()
+      |     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+/usr/bin/ld: warning: libopencv_imgcodecs.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.4
+/usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.4

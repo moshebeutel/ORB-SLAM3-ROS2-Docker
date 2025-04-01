@@ -689,7 +689,7 @@ Qt5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
 SITE:STRING=LP-Boston-11364
 
 //The directory containing a CMake configuration file for Sophus.
-Sophus_DIR:PATH=/usr/local/share/sophus/cmake
+Sophus_DIR:PATH=/home/orb/ORB_SLAM3/Thirdparty/Sophus/build
 
 //The directory containing a CMake configuration file for TBB.
 TBB_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/TBB

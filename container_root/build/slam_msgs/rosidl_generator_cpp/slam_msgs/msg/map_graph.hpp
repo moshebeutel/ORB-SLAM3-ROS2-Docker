@@ -7,5 +7,6 @@
 #include "slam_msgs/msg/detail/map_graph__struct.hpp"
 #include "slam_msgs/msg/detail/map_graph__builder.hpp"
 #include "slam_msgs/msg/detail/map_graph__traits.hpp"
+#include "slam_msgs/msg/detail/map_graph__type_support.hpp"
 
 #endif  // SLAM_MSGS__MSG__MAP_GRAPH_HPP_

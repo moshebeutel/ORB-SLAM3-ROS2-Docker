@@ -7,5 +7,6 @@
 #include "slam_msgs/srv/detail/get_all_landmarks_in_map__struct.hpp"
 #include "slam_msgs/srv/detail/get_all_landmarks_in_map__builder.hpp"
 #include "slam_msgs/srv/detail/get_all_landmarks_in_map__traits.hpp"
+#include "slam_msgs/srv/detail/get_all_landmarks_in_map__type_support.hpp"
 
 #endif  // SLAM_MSGS__SRV__GET_ALL_LANDMARKS_IN_MAP_HPP_

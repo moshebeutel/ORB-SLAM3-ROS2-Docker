@@ -7,5 +7,6 @@
 #include "slam_msgs/srv/detail/get_global_point_cloud__struct.hpp"
 #include "slam_msgs/srv/detail/get_global_point_cloud__builder.hpp"
 #include "slam_msgs/srv/detail/get_global_point_cloud__traits.hpp"
+#include "slam_msgs/srv/detail/get_global_point_cloud__type_support.hpp"
 
 #endif  // SLAM_MSGS__SRV__GET_GLOBAL_POINT_CLOUD_HPP_

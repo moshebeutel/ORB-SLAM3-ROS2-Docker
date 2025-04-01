@@ -7,5 +7,6 @@
 #include "slam_msgs/srv/detail/get_landmarks_in_view__struct.hpp"
 #include "slam_msgs/srv/detail/get_landmarks_in_view__builder.hpp"
 #include "slam_msgs/srv/detail/get_landmarks_in_view__traits.hpp"
+#include "slam_msgs/srv/detail/get_landmarks_in_view__type_support.hpp"
 
 #endif  // SLAM_MSGS__SRV__GET_LANDMARKS_IN_VIEW_HPP_

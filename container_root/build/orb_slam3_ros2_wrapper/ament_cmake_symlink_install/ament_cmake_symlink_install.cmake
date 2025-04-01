@@ -316,7 +316,7 @@ include("/root/build/orb_slam3_ros2_wrapper/ament_cmake_symlink_install_targets_
 # install(DIRECTORY "launch" "params" "DESTINATION" "share/orb_slam3_ros2_wrapper")
 ament_cmake_symlink_install_directory("/root/colcon_ws/src/orb_slam3_ros2_wrapper" DIRECTORY "launch" "params" "DESTINATION" "share/orb_slam3_ros2_wrapper")
 
-# install("TARGETS" "orb_slam3_multi_map_fusion" "DESTINATION" "lib/orb_slam3_ros2_wrapper")
+# install("TARGETS" "map_merger" "DESTINATION" "lib/orb_slam3_ros2_wrapper")
 include("/root/build/orb_slam3_ros2_wrapper/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/root/build/orb_slam3_ros2_wrapper/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/orb_slam3_ros2_wrapper" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

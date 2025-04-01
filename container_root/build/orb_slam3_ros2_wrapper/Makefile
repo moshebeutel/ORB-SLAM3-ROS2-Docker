@@ -211,104 +211,41 @@ rgbd/fast:
 .PHONY : rgbd/fast
 
 #=============================================================================
-# Target rules for targets named orb_slam3_multi_map_fusion
+# Target rules for targets named map_merger
 
 # Build rule for target.
-orb_slam3_multi_map_fusion: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 orb_slam3_multi_map_fusion
-.PHONY : orb_slam3_multi_map_fusion
+map_merger: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 map_merger
+.PHONY : map_merger
 
 # fast build rule for target.
-orb_slam3_multi_map_fusion/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/build
-.PHONY : orb_slam3_multi_map_fusion/fast
+map_merger/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/build
+.PHONY : map_merger/fast
 
-#=============================================================================
-# Target rules for targets named typeconversionTests
-
-# Build rule for target.
-typeconversionTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 typeconversionTests
-.PHONY : typeconversionTests
-
-# fast build rule for target.
-typeconversionTests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/build
-.PHONY : typeconversionTests/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-src/multi_map_fusion/multi_map_fusion.o: src/multi_map_fusion/multi_map_fusion.cpp.o
-.PHONY : src/multi_map_fusion/multi_map_fusion.o
+src/map_merger/map_merger.o: src/map_merger/map_merger.cpp.o
+.PHONY : src/map_merger/map_merger.o
 
 # target to build an object file
-src/multi_map_fusion/multi_map_fusion.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/src/multi_map_fusion/multi_map_fusion.cpp.o
-.PHONY : src/multi_map_fusion/multi_map_fusion.cpp.o
+src/map_merger/map_merger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/map_merger/map_merger.cpp.o
+.PHONY : src/map_merger/map_merger.cpp.o
 
-src/multi_map_fusion/multi_map_fusion.i: src/multi_map_fusion/multi_map_fusion.cpp.i
-.PHONY : src/multi_map_fusion/multi_map_fusion.i
-
-# target to preprocess a source file
-src/multi_map_fusion/multi_map_fusion.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/src/multi_map_fusion/multi_map_fusion.cpp.i
-.PHONY : src/multi_map_fusion/multi_map_fusion.cpp.i
-
-src/multi_map_fusion/multi_map_fusion.s: src/multi_map_fusion/multi_map_fusion.cpp.s
-.PHONY : src/multi_map_fusion/multi_map_fusion.s
-
-# target to generate assembly for a file
-src/multi_map_fusion/multi_map_fusion.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/src/multi_map_fusion/multi_map_fusion.cpp.s
-.PHONY : src/multi_map_fusion/multi_map_fusion.cpp.s
-
-src/multi_map_fusion/orb_slam3_multi_map_fusion.o: src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.o
-.PHONY : src/multi_map_fusion/orb_slam3_multi_map_fusion.o
-
-# target to build an object file
-src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.o
-.PHONY : src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.o
-
-src/multi_map_fusion/orb_slam3_multi_map_fusion.i: src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.i
-.PHONY : src/multi_map_fusion/orb_slam3_multi_map_fusion.i
+src/map_merger/map_merger.i: src/map_merger/map_merger.cpp.i
+.PHONY : src/map_merger/map_merger.i
 
 # target to preprocess a source file
-src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.i
-.PHONY : src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.i
+src/map_merger/map_merger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/map_merger/map_merger.cpp.i
+.PHONY : src/map_merger/map_merger.cpp.i
 
-src/multi_map_fusion/orb_slam3_multi_map_fusion.s: src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.s
-.PHONY : src/multi_map_fusion/orb_slam3_multi_map_fusion.s
+src/map_merger/map_merger.s: src/map_merger/map_merger.cpp.s
+.PHONY : src/map_merger/map_merger.s
 
 # target to generate assembly for a file
-src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orb_slam3_multi_map_fusion.dir/build.make CMakeFiles/orb_slam3_multi_map_fusion.dir/src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.s
-.PHONY : src/multi_map_fusion/orb_slam3_multi_map_fusion.cpp.s
+src/map_merger/map_merger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/map_merger/map_merger.cpp.s
+.PHONY : src/map_merger/map_merger.cpp.s
 
 src/orb_slam3_interface.o: src/orb_slam3_interface.cpp.o
 .PHONY : src/orb_slam3_interface.o
@@ -316,6 +253,7 @@ src/orb_slam3_interface.o: src/orb_slam3_interface.cpp.o
 # target to build an object file
 src/orb_slam3_interface.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rgbd.dir/build.make CMakeFiles/rgbd.dir/src/orb_slam3_interface.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/orb_slam3_interface.cpp.o
 .PHONY : src/orb_slam3_interface.cpp.o
 
 src/orb_slam3_interface.i: src/orb_slam3_interface.cpp.i
@@ -324,6 +262,7 @@ src/orb_slam3_interface.i: src/orb_slam3_interface.cpp.i
 # target to preprocess a source file
 src/orb_slam3_interface.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rgbd.dir/build.make CMakeFiles/rgbd.dir/src/orb_slam3_interface.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/orb_slam3_interface.cpp.i
 .PHONY : src/orb_slam3_interface.cpp.i
 
 src/orb_slam3_interface.s: src/orb_slam3_interface.cpp.s
@@ -332,6 +271,7 @@ src/orb_slam3_interface.s: src/orb_slam3_interface.cpp.s
 # target to generate assembly for a file
 src/orb_slam3_interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rgbd.dir/build.make CMakeFiles/rgbd.dir/src/orb_slam3_interface.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/orb_slam3_interface.cpp.s
 .PHONY : src/orb_slam3_interface.cpp.s
 
 src/rgbd/rgbd-slam-node.o: src/rgbd/rgbd-slam-node.cpp.o
@@ -388,7 +328,7 @@ src/type_conversion.o: src/type_conversion.cpp.o
 # target to build an object file
 src/type_conversion.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rgbd.dir/build.make CMakeFiles/rgbd.dir/src/type_conversion.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/src/type_conversion.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/type_conversion.cpp.o
 .PHONY : src/type_conversion.cpp.o
 
 src/type_conversion.i: src/type_conversion.cpp.i
@@ -397,7 +337,7 @@ src/type_conversion.i: src/type_conversion.cpp.i
 # target to preprocess a source file
 src/type_conversion.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rgbd.dir/build.make CMakeFiles/rgbd.dir/src/type_conversion.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/src/type_conversion.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/type_conversion.cpp.i
 .PHONY : src/type_conversion.cpp.i
 
 src/type_conversion.s: src/type_conversion.cpp.s
@@ -406,32 +346,8 @@ src/type_conversion.s: src/type_conversion.cpp.s
 # target to generate assembly for a file
 src/type_conversion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rgbd.dir/build.make CMakeFiles/rgbd.dir/src/type_conversion.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/src/type_conversion.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_merger.dir/build.make CMakeFiles/map_merger.dir/src/type_conversion.cpp.s
 .PHONY : src/type_conversion.cpp.s
-
-tests/typeConversionsTests.o: tests/typeConversionsTests.cpp.o
-.PHONY : tests/typeConversionsTests.o
-
-# target to build an object file
-tests/typeConversionsTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/tests/typeConversionsTests.cpp.o
-.PHONY : tests/typeConversionsTests.cpp.o
-
-tests/typeConversionsTests.i: tests/typeConversionsTests.cpp.i
-.PHONY : tests/typeConversionsTests.i
-
-# target to preprocess a source file
-tests/typeConversionsTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/tests/typeConversionsTests.cpp.i
-.PHONY : tests/typeConversionsTests.cpp.i
-
-tests/typeConversionsTests.s: tests/typeConversionsTests.cpp.s
-.PHONY : tests/typeConversionsTests.s
-
-# target to generate assembly for a file
-tests/typeConversionsTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/typeconversionTests.dir/build.make CMakeFiles/typeconversionTests.dir/tests/typeConversionsTests.cpp.s
-.PHONY : tests/typeConversionsTests.cpp.s
 
 # Help Target
 help:
@@ -448,17 +364,11 @@ help:
 	@echo "... test"
 	@echo "... orb_slam3_ros2_wrapper_uninstall"
 	@echo "... uninstall"
-	@echo "... gtest"
-	@echo "... gtest_main"
-	@echo "... orb_slam3_multi_map_fusion"
+	@echo "... map_merger"
 	@echo "... rgbd"
-	@echo "... typeconversionTests"
-	@echo "... src/multi_map_fusion/multi_map_fusion.o"
-	@echo "... src/multi_map_fusion/multi_map_fusion.i"
-	@echo "... src/multi_map_fusion/multi_map_fusion.s"
-	@echo "... src/multi_map_fusion/orb_slam3_multi_map_fusion.o"
-	@echo "... src/multi_map_fusion/orb_slam3_multi_map_fusion.i"
-	@echo "... src/multi_map_fusion/orb_slam3_multi_map_fusion.s"
+	@echo "... src/map_merger/map_merger.o"
+	@echo "... src/map_merger/map_merger.i"
+	@echo "... src/map_merger/map_merger.s"
 	@echo "... src/orb_slam3_interface.o"
 	@echo "... src/orb_slam3_interface.i"
 	@echo "... src/orb_slam3_interface.s"
@@ -471,9 +381,6 @@ help:
 	@echo "... src/type_conversion.o"
 	@echo "... src/type_conversion.i"
 	@echo "... src/type_conversion.s"
-	@echo "... tests/typeConversionsTests.o"
-	@echo "... tests/typeConversionsTests.i"
-	@echo "... tests/typeConversionsTests.s"
 .PHONY : help
 
 

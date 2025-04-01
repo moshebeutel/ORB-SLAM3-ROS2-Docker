@@ -545,3 +545,40 @@ cd /home/orb/ORB_SLAM3/
 cd /home/orb/
 ls
 exit
+cd colcon_ws/
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+exit
+cd colcon_ws/
+ls
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+exit
+ls
+cd colcon_ws/
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+exit
+cd colcon_ws/
+ros2 topic list
+echo $ROS_DOMAIN_ID
+exit
+echo $ROS_DOMAIN_ID
+ros2 topic list
+source /opt/ros/humble/setup.bash 
+ros2 topic list
+rqt_graph 
+cd colcon_ws/
+ros2 launch orb_slam3_ros2_wrapper multi_robot.launch.py 
+exit
+ros2 topic list
+cd //
+cd
+cd colcon_ws/
+echo $ROS_DOMAIN_ID
+export ROS_DOMAIN_ID=1
+echo $ROS_DOMAIN_ID
+ros2 topic list
+rqt
+rviz2
+exit

@@ -12,26 +12,26 @@ MapMerger::MapMerger() : Node("map_merger")
     robot1_odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
         "/robot_0/ground_truth_pose", 10,
         [this](const nav_msgs::msg::Odometry::SharedPtr odom_msg) {
-            RCLCPP_INFO(this->get_logger(), "Odometry callback triggered for Robot 1.");
+            // RCLCPP_INFO(this->get_logger(), "Odometry callback triggered for Robot 1.");
 
             // Update Robot 0's pose from the odometry message
             robot1_pose_.pose = odom_msg->pose.pose;
 
-            RCLCPP_INFO(this->get_logger(), "Robot 1 pose updated from odometry: [%.2f, %.2f, %.2f]",
-                        robot1_pose_.pose.position.x, robot1_pose_.pose.position.y, robot1_pose_.pose.position.z);
+            // RCLCPP_INFO(this->get_logger(), "Robot 1 pose updated from odometry: [%.2f, %.2f, %.2f]",
+            //             robot1_pose_.pose.position.x, robot1_pose_.pose.position.y, robot1_pose_.pose.position.z);
         });
 
     // Odometry subscription for Robot 2
     robot2_odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
         "/robot_1/ground_truth_pose", 10,
         [this](const nav_msgs::msg::Odometry::SharedPtr odom_msg) {
-            RCLCPP_INFO(this->get_logger(), "Odometry callback triggered for Robot 2.");
+            // RCLCPP_INFO(this->get_logger(), "Odometry callback triggered for Robot 2.");
 
             // Update Robot 2's pose from the odometry message
             robot2_pose_.pose = odom_msg->pose.pose;
 
-            RCLCPP_INFO(this->get_logger(), "Robot 2 pose updated from odometry: [%.2f, %.2f, %.2f]",
-                        robot2_pose_.pose.position.x, robot2_pose_.pose.position.y, robot2_pose_.pose.position.z);
+            // RCLCPP_INFO(this->get_logger(), "Robot 2 pose updated from odometry: [%.2f, %.2f, %.2f]",
+            //             robot2_pose_.pose.position.x, robot2_pose_.pose.position.y, robot2_pose_.pose.position.z);
         });
 
     RCLCPP_INFO(this->get_logger(), "Subscribed to /robot_0/ground_truth_pose for Robot 1 odometry.");
@@ -55,27 +55,35 @@ MapMerger::MapMerger() : Node("map_merger")
 
     // Timer to periodically check merge status
     merge_timer_ = this->create_wall_timer(
-        std::chrono::seconds(1), std::bind(&MapMerger::checkMergeStatus, this));
+        std::chrono::milliseconds(500), std::bind(&MapMerger::checkMergeStatus, this));
+
+    // Initialize robot poses
+    robot1_pose_.pose.position.x = 0.0;
+    robot1_pose_.pose.position.y = 0.0;
+    robot1_pose_.pose.position.z = 0.0;
+
+    robot2_pose_.pose.position.x = 0.0;
+    robot2_pose_.pose.position.y = 0.0;
+    robot2_pose_.pose.position.z = 0.0;
+
+    // Check merge status
+    checkMergeStatus();
 }
 
 void MapMerger::robot1MapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
-    // Store Robot 1's map point cloud
     robot1_map_cloud_ = *msg;
 
-    // Retrieve and store Robot 1's current pose
-    orb_slam_interface_->getRobotPose(robot1_pose_);
-
-    RCLCPP_INFO(this->get_logger(), "Robot 1 map point cloud processed. Pose: [%.2f, %.2f, %.2f]",
-                robot1_pose_.pose.position.x, robot1_pose_.pose.position.y, robot1_pose_.pose.position.z);
+    RCLCPP_INFO(this->get_logger(), "Robot 1 map point cloud processed. Width: %u, Height: %u",
+                robot1_map_cloud_.width, robot1_map_cloud_.height);
 }
 
 void MapMerger::robot2MapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
-    // Store Robot 2's map point cloud
     robot2_map_cloud_ = *msg;
 
-    RCLCPP_INFO(this->get_logger(), "Robot 2 map point cloud processed.");
+    RCLCPP_INFO(this->get_logger(), "Robot 2 map point cloud processed. Width: %u, Height: %u",
+                robot2_map_cloud_.width, robot2_map_cloud_.height);
 }
 
 void MapMerger::checkMergeStatus()
@@ -85,17 +93,24 @@ void MapMerger::checkMergeStatus()
     {
         RCLCPP_INFO(this->get_logger(), "Map merge detected by ORB-SLAM3. Waiting for completion...");
     }
+    else
+    {
+        RCLCPP_INFO(this->get_logger(), "No merge detected by ORB-SLAM3.");
+    }
+    // Calculate the distance between the robots
+    double distance = std::sqrt(std::pow(robot1_pose_.pose.position.x - robot2_pose_.pose.position.x, 2) +
+    std::pow(robot1_pose_.pose.position.y - robot2_pose_.pose.position.y, 2) +
+    std::pow(robot1_pose_.pose.position.z - robot2_pose_.pose.position.z, 2));
 
     // Check if the merge process is finished
     if (orb_slam_interface_->getSLAMSystem()->GetLoopClosing()->isFinished())
     {
-        // Calculate the distance between the robots
-        double distance = std::sqrt(std::pow(robot1_pose_.pose.position.x - robot2_pose_.pose.position.x, 2) +
-                                    std::pow(robot1_pose_.pose.position.y - robot2_pose_.pose.position.y, 2) +
-                                    std::pow(robot1_pose_.pose.position.z - robot2_pose_.pose.position.z, 2));
+        RCLCPP_INFO(this->get_logger(), "Merge process finished by ORB-SLAM3.");
+        
+        
 
-        // Define a threshold for merging (e.g., 5 meters)
-        const double merge_threshold = 5.0;
+        // Define a threshold for merging (e.g., 25 meters)
+        const double merge_threshold = 25.0;
 
         if (distance < merge_threshold)
         {
@@ -109,7 +124,7 @@ void MapMerger::checkMergeStatus()
     }
     else
     {
-        RCLCPP_INFO(this->get_logger(), "No merge detected. Continuing to monitor...");
+        RCLCPP_INFO(this->get_logger(), "Merge process not finished. Continuing to monitor... Distance: %.2f meters", distance);
     }
 }
 
@@ -119,6 +134,10 @@ void MapMerger::publishMergedMap()
 
     // Convert ORB-SLAM3's internal map data to a ROS message
     orb_slam_interface_->mapDataToMsg(merged_map_msg, false, true);
+
+    // Check the number of keyframes in the nodes array
+    RCLCPP_INFO(this->get_logger(), "Merged map data converted. Number of keyframes: %zu", merged_map_msg.nodes.size());
+    RCLCPP_INFO(this->get_logger(), "Number of keyframes in merged map: %zu", merged_map_msg.nodes.size());
 
     // Publish the merged map
     merged_map_pub_->publish(merged_map_msg);
