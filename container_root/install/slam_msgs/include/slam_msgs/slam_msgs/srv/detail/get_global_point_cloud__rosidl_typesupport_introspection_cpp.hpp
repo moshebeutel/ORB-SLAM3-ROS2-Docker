@@ -1,1 +1,0 @@
-/root/build/slam_msgs/rosidl_typesupport_introspection_cpp/slam_msgs/srv/detail/get_global_point_cloud__rosidl_typesupport_introspection_cpp.hpp

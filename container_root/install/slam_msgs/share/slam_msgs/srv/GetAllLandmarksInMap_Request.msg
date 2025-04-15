@@ -1,1 +1,0 @@
-/root/build/slam_msgs/rosidl_cmake/srv/GetAllLandmarksInMap_Request.msg

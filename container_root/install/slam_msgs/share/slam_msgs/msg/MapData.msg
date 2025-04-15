@@ -1,1 +1,0 @@
-/root/colcon_ws/src/slam_msgs/msg/MapData.msg

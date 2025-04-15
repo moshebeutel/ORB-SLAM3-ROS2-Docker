@@ -1,1 +1,0 @@
-/root/build/slam_msgs/rosidl_generator_py/slam_msgs/srv/__init__.py

@@ -1,1 +1,0 @@
-/root/build/slam_msgs/rosidl_generator_c/slam_msgs/srv/detail/get_global_point_cloud__type_support.h

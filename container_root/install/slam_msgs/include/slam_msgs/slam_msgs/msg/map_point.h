@@ -1,1 +1,0 @@
-/root/build/slam_msgs/rosidl_generator_c/slam_msgs/msg/map_point.h

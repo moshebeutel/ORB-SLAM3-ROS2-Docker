@@ -105,11 +105,8 @@ alias sros='source /opt/ros/humble/setup.bash'
 alias vsc='code --no-sandbox --disable-gpu-sandbox --user-data-dir=/tmp/vscode .'
 alias sep='echo "================================================================="'
 source /opt/ros/humble/setup.bash
-export SCOUT_NAMESPACE=scout_2
-export ROS_DOMAIN_ID=55
 export RCUTILS_COLORIZED_OUTPUT=1
-export ROS_LOCALHOST_ONLY=1
 cd
 sros
 sws
-export LD_LIBRARY_PATH=/home/orb/ORB_SLAM3/lib:$LD_LIBRARY_PATH
+source /root/ros_env_vars.sh

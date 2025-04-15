@@ -1,1 +1,0 @@
-/root/build/slam_msgs/rosidl_typesupport_fastrtps_c/slam_msgs/srv/detail/get_map__rosidl_typesupport_fastrtps_c.h
