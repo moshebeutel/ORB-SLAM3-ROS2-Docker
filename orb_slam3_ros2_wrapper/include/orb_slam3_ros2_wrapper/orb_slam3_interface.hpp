@@ -30,6 +30,7 @@
 #include "Map.h"
 #include "Atlas.h"
 #include "orb_slam3_ros2_wrapper/type_conversion.hpp"
+#include "orb_slam3_ros2_wrapper/time_profiler.hpp"
 
 namespace ORB_SLAM3_Wrapper
 {
@@ -40,8 +41,8 @@ namespace ORB_SLAM3_Wrapper
                           const std::string &strSettingsFile,
                           ORB_SLAM3::System::eSensor sensor,
                           bool bUseViewer,
-                          double robotX,
-                          double robotY,
+                          bool loopClosing,
+                          geometry_msgs::msg::Pose initialRobotPose,
                           std::string globalFrame,
                           std::string odomFrame,
                           std::string robotFrame);
@@ -69,7 +70,7 @@ namespace ORB_SLAM3_Wrapper
 
         void correctTrackedPose(Sophus::SE3f &s);
 
-        void getDirectMapToRobotTF(std_msgs::msg::Header headerToUse, geometry_msgs::msg::TransformStamped &tf);
+        void getDirectOdomToRobotTF(std_msgs::msg::Header headerToUse, geometry_msgs::msg::TransformStamped &tf);
 
         void getMapToOdomTF(const nav_msgs::msg::Odometry::SharedPtr msgOdom, geometry_msgs::msg::TransformStamped &tf);
 
@@ -77,9 +78,12 @@ namespace ORB_SLAM3_Wrapper
 
         void getOptimizedPoseGraph(slam_msgs::msg::MapGraph &graph, bool currentMapGraph);
 
-        void getCurrentMapPoints(sensor_msgs::msg::PointCloud2 &mapPointCloud);
+        TimeProfiler* getTimeProfiler()
+        {
+            return time_profiler_;
+        };
 
-        void getAllMapPoints(sensor_msgs::msg::PointCloud2 &mapPCL);
+        void getCurrentMapPoints(sensor_msgs::msg::PointCloud2 &mapPointCloud);
 
         void mapPointsVisibleFromPose(geometry_msgs::msg::Pose cameraPose, std::vector<ORB_SLAM3::MapPoint*>& points, int maxLandmarks, float maxDistance, float maxAngle);
 
@@ -96,11 +100,12 @@ namespace ORB_SLAM3_Wrapper
             return typeConversions_;
         };
 
-        // -------------------------------------- Edit by Daphna --------------------------------------
-        std::shared_ptr<ORB_SLAM3::System> getSLAMSystem() const
+        void resetLocalMapping();
+
+        size_t getNumberOfMaps()
         {
-            return mSLAM_;
-        }
+            return orbAtlas_->GetAllMaps().size(); 
+        };
 
     private:
         std::shared_ptr<ORB_SLAM3::System> mSLAM_;
@@ -110,21 +115,28 @@ namespace ORB_SLAM3_Wrapper
         std::string strSettingsFile_;
         ORB_SLAM3::System::eSensor sensor_;
         bool bUseViewer_;
+        bool loopClosing_;
 
         queue<sensor_msgs::msg::Imu::SharedPtr> imuBuf_;
         std::mutex bufMutex_;
         std::mutex mapDataMutex_;
         std::mutex currentMapPointsMutex_;
 
-        std::unordered_map<ORB_SLAM3::Map *, Eigen::Affine3d> mapReferencePoses_;
+        std::unordered_map<ORB_SLAM3::Map *, Eigen::Affine3f> mapReferencePoses_;
+        std::unordered_map<ORB_SLAM3::Map *, Eigen::Affine3f> mapReferencePosesOverrides_;
         std::mutex mapReferencesMutex_;
         std::unordered_map<long unsigned int, ORB_SLAM3::KeyFrame *> allKFs_;
-        Eigen::Affine3d latestTrackedPose_;
+        std::mutex latestTrackedPoseMutex_;
+        Eigen::Affine3f latestTrackedPose_; // from map_ros to base_footprint
+        Eigen::Affine3f latestTrackedPoseORB_camera_; // from map_orb to camera_link
+        Eigen::Affine3f robotBase_to_cameraLink_;
         bool hasTracked_ = false;
-        double robotX_, robotY_;
+        geometry_msgs::msg::Pose initialRobotPose_;
         std::string globalFrame_;
         std::string odomFrame_;
         std::string robotFrame_;
+
+        TimeProfiler* time_profiler_;
     };
 }
 
