@@ -1,5 +1,5 @@
 /**
- * @file rgbd-slam-node.hpp
+ * @file base-slam-node.hpp
  * @brief Definition of the BaseSlamNode Wrapper class.
  * @author Suchetan R S (rssuchetan@gmail.com)
  */
@@ -92,6 +92,9 @@ namespace ORB_SLAM3_Wrapper
         std::shared_ptr<tf2_ros::TransformBroadcaster> tfBroadcaster_;
         std::shared_ptr<tf2_ros::TransformListener> tfListener_;
         std::shared_ptr<tf2_ros::Buffer> tfBuffer_;
+        // IMU Queue
+        std::queue<sensor_msgs::msg::Imu::SharedPtr> imuQueue_;
+        std::mutex imuMutex_;
         // ROS Services
         rclcpp::Service<slam_msgs::srv::GetMap>::SharedPtr getMapDataService_;
         rclcpp::Service<slam_msgs::srv::GetLandmarksInView>::SharedPtr getMapPointsService_;
@@ -102,6 +105,19 @@ namespace ORB_SLAM3_Wrapper
         rclcpp::CallbackGroup::SharedPtr mapDataCallbackGroup_;
         rclcpp::CallbackGroup::SharedPtr mapPointsCallbackGroup_;
         rclcpp::CallbackGroup::SharedPtr pointsInViewCallbackGroup_;
+
+        // ROS Subscribers
+        std::shared_ptr<message_filters::Subscriber<sensor_msgs::msg::Image>> rgbSub_;
+        rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imuSub_;
+        rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odomSub_;
+
+        // ROS Callbacks.
+        void ImuCallback(const sensor_msgs::msg::Imu::SharedPtr msgIMU);
+        void OdomCallback(const nav_msgs::msg::Odometry::SharedPtr msgOdom);
+        void RGBCallback(const sensor_msgs::msg::Image::SharedPtr msgRGB);
+
+        std::vector<ORB_SLAM3::IMU::Point> extractImuMeasurements(double tIm);
+
         // ROS Params
         std::string robot_base_frame_id_;
         std::string odom_frame_id_;

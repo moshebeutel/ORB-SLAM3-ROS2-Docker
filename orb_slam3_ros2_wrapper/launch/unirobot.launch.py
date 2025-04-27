@@ -15,9 +15,9 @@ def generate_launch_description():
         get_package_share_directory('orb_slam3_ros2_wrapper'), 'launch')
 
     orb_slam3_launch_file_path = os.path.join(
-            orb_slam3_launch_file_dir, 'rgbd.launch.py')
+            orb_slam3_launch_file_dir, 'mono.launch.py')
 
-    # Launch the rgbd.launch.py file
+    # Launch the mono.launch.py file
     orb_slam3_launch_description = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(orb_slam3_launch_file_path),
             launch_arguments={"robot_namespace": robot_namespace}.items(),

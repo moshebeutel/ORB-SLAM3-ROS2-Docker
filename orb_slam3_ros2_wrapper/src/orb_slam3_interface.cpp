@@ -623,4 +623,45 @@ namespace ORB_SLAM3_Wrapper
             return false;
         }
     }
+
+    bool ORBSLAM3Interface::TrackMonocular(const sensor_msgs::msg::Image::SharedPtr &msgRGB,
+        const double &timestamp,
+        const std::vector<ORB_SLAM3::IMU::Point> &imuMeasurements,
+        Sophus::SE3f &Tcw)
+    {
+        // Convert ROS image message to OpenCV Mat
+        cv_bridge::CvImageConstPtr cvRGB;
+        // Copy the ros rgb image message to cv::Mat.
+        try
+        {
+            cvRGB = cv_bridge::toCvShare(msgRGB);
+        }
+        catch (cv_bridge::Exception &e)
+        {
+            std::cerr << "cv_bridge exception RGB!" << endl;
+            return false;
+        }
+
+    // Pass IMU measurements to ORB-SLAM3
+    if (sensor_ == ORB_SLAM3::System::IMU_MONOCULAR)
+    {
+    for (const auto &imu : imuMeasurements)
+    {
+    mpSLAM_->TrackIMU(imu);
+    }
+    }
+
+    // Call ORB-SLAM3's TrackMonocular function
+    Tcw = mpSLAM_->TrackMonocular(cvRGB, timestamp, imuMeasurements);
+
+    // Check if tracking was successful
+    if (Tcw.isApprox(Sophus::SE3f())) // If Tcw is the default/identity transformation
+    {
+    RCLCPP_WARN(rclcpp::get_logger("ORB_SLAM3_Interface"), "Tracking Mono failed.");
+    return false;
+    }
+
+    RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"), "Tracking Mono successful.");
+    return true;
+    }
 }
