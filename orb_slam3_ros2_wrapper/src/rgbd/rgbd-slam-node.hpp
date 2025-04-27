@@ -39,7 +39,7 @@
 
 #include "orb_slam3_ros2_wrapper/type_conversion.hpp"
 #include "orb_slam3_ros2_wrapper/orb_slam3_interface.hpp"
-#include "orb_slam3_ros2_wrapper/base_slam_node.hpp"
+#include "orb_slam3_ros2_wrapper/mono/base-slam-node.hpp"
 
 namespace ORB_SLAM3_Wrapper
 {

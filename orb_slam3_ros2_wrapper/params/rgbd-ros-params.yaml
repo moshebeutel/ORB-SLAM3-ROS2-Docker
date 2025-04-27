@@ -9,7 +9,7 @@ ORB_SLAM3_ROS2:
     global_frame: map
     odom_frame: odom
     rgb_image_topic_name: rgb_camera
-    depth_image_topic_name: depth_camera
+    # depth_image_topic_name: depth_camera
     imu_topic_name: imu #Not used in this variant. Try RGB_IMU to use this information.
     odom_topic_name: ground_truth_pose #Used if odometry_mode parameter is set to true. (Set to ground_truth_pose for pose from simulation example. You can choose the topic you want)
 

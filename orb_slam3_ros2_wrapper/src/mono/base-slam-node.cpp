@@ -3,7 +3,7 @@
  * @brief Implementation of the BaseSlamNode Wrapper class.
  * @author Suchetan R S (rssuchetan@gmail.com)
  */
-#include "orb_slam3_ros2_wrapper/base_slam_node.hpp"
+#include "base-slam-node.hpp"
 
 #include <opencv2/core/core.hpp>
 
