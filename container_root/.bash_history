@@ -498,3 +498,32 @@ ls
 tmux
 ls
 ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+echo $ROS_DOMAIN_ID
+ros2 topic list
+source /opt/ros/humble/setup.bash 
+ros2 topic list
+ros2 topic list | grep depth
+ros2 topic list | grep rgb
+ros2 topic list | grep image
+ros2 topic list -t | grep image
+ros2 topic list -t | grep Image
+rviz2
+ros2 topic list -t | grep Imu
+ros2 topic echo /drn12345678/imu/data 
+ros2 topic list -t | grep Odon
+ros2 topic list -t | grep Odom
+ros2 topic echo /drn12345678/mavros/local_position/odom 
+ros2 node list
+source /opt/ros/humble/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+exit
+cd colcon_ws/
+ls
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+exit
+cd colcon_ws/
+source /opt/ros/humble/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+exit

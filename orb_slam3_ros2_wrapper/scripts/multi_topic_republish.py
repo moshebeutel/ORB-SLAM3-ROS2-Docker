@@ -16,8 +16,8 @@ class MultiTopicRepublisher(Node):
         self.topic_pairs = [
             ('/drn12345678/mavros/imu/data', Imu, '/robot_0/imu'),
             ('/active_drone_fpv', Image, '/robot_0/rgb_camera'),
-            ('/drn12345678/mavros/local_position/odom', Odometry, '/robot_0/ground_truth_pose'),
-            ('/active_drone_fpv', Image, '/robot_0/depth_camera'),
+            ('/drn12345678/mavros/global_position/local', Odometry, '/robot_0/ground_truth_pose'),
+            # ('/active_drone_fpv', Image, '/robot_0/depth_camera'),
         ]
 
         # Dictionaries to store publishers
@@ -31,6 +31,7 @@ class MultiTopicRepublisher(Node):
                 self.make_callback(output_topic),
                 qos
             )
+            
             self.my_publishers[output_topic] = self.create_publisher(
                 topic_type,
                 output_topic,
@@ -40,6 +41,12 @@ class MultiTopicRepublisher(Node):
     def make_callback(self, output_topic):
         def callback(msg):
             # self.get_logger().info(f'[{output_topic}] Republishing: "{msg}"')
+            # if output_topic == '/robot_0/imu':
+            #     # Deserialize the message if needed
+            #     msg = Imu()
+            # if output_topic == '/robot_0/ground_truth_pose':
+            #     # Deserialize the message if needed
+                # msg = Odometry()
             self.my_publishers[output_topic].publish(msg)
         return callback
 
