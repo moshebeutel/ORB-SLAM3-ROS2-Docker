@@ -147,13 +147,13 @@ namespace ORB_SLAM3_Wrapper
             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 4000, "Odometry msg recorded but no odometry mode is true, set to false to use this odometry");
     }
 
-    std::vector<ORB_SLAM3::IMU::Point> BaseSlamNode::extractImuMeasurements(double tIm)
+      std::vector<ORB_SLAM3::IMU::Point> BaseSlamNode::extractImuMeasurements(double tIm)
     {
         std::vector<ORB_SLAM3::IMU::Point> vImuMeas;
-
+    
         // Ensure thread-safe access to the IMU queue
         std::lock_guard<std::mutex> lock(imuMutex_);
-
+    
         // Check if the IMU queue is not empty
         if (!imuQueue_.empty())
         {
@@ -162,18 +162,27 @@ namespace ORB_SLAM3_Wrapper
             {
                 auto imuMsg = imuQueue_.front();
                 imuQueue_.pop();
-
+    
                 // Convert the IMU message to ORB-SLAM3's IMU::Point format
                 double imuTime = imuMsg->header.stamp.sec + imuMsg->header.stamp.nanosec * 1e-9;
-                Eigen::Vector3d accel(imuMsg->linear_acceleration.x, imuMsg->linear_acceleration.y, imuMsg->linear_acceleration.z);
-                Eigen::Vector3d gyro(imuMsg->angular_velocity.x, imuMsg->angular_velocity.y, imuMsg->angular_velocity.z);
-
+    
+                // Convert Eigen::Vector3d to cv::Point3f
+                cv::Point3f accel(static_cast<float>(imuMsg->linear_acceleration.x),
+                                  static_cast<float>(imuMsg->linear_acceleration.y),
+                                  static_cast<float>(imuMsg->linear_acceleration.z));
+    
+                cv::Point3f gyro(static_cast<float>(imuMsg->angular_velocity.x),
+                                 static_cast<float>(imuMsg->angular_velocity.y),
+                                 static_cast<float>(imuMsg->angular_velocity.z));
+    
+                // Create an IMU::Point object
                 vImuMeas.emplace_back(accel, gyro, imuTime);
             }
         }
-
+    
         return vImuMeas;
     }
+    
     void BaseSlamNode::publishMapPointCloud(std::shared_ptr<rmw_request_id_t> request_header,
                                             std::shared_ptr<slam_msgs::srv::GetAllLandmarksInMap::Request> request,
                                             std::shared_ptr<slam_msgs::srv::GetAllLandmarksInMap::Response> response)
@@ -297,11 +306,11 @@ namespace ORB_SLAM3_Wrapper
 
     // Extract IMU measurements synchronized with the current frame
     std::vector<ORB_SLAM3::IMU::Point> imuMeasurements = extractImuMeasurements(timestamp);
-
+    Sophus::SE3f Tcw;
     // Call ORB-SLAM3's TrackMonocular function
-    Sophus::SE3f Tcw = interface_->TrackMonocular(msgRGB, timestamp, imuMeasurements);
+    // Sophus::SE3f Tcw = interface_->TrackMonocular(msgRGB, timestamp, imuMeasurements, Tcw);
     // Check if tracking was successful
-    if (!Tcw.isApprox(Sophus::SE3f())) // Check if Tcw is valid
+    if (interface_->trackMonocular(msgRGB, timestamp, imuMeasurements, Tcw)) // Check if Tcw is valid
     {
         isTracked_ = true;
 

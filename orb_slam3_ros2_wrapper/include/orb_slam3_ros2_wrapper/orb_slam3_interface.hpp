@@ -96,7 +96,7 @@ namespace ORB_SLAM3_Wrapper
         bool trackRGBD(const sensor_msgs::msg::Image::SharedPtr msgRGB, const sensor_msgs::msg::Image::SharedPtr msgD, Sophus::SE3f &Tcw);
 
         // Wrapper for ORB-SLAM3's TrackMonocular function
-        bool TrackMonocular(const sensor_msgs::msg::Image::SharedPtr &msgRGB,
+        bool trackMonocular(const sensor_msgs::msg::Image::SharedPtr &msgRGB,
             const double &timestamp,
             const std::vector<ORB_SLAM3::IMU::Point> &imuMeasurements,
             Sophus::SE3f &Tcw);
