@@ -629,36 +629,69 @@ namespace ORB_SLAM3_Wrapper
         const std::vector<ORB_SLAM3::IMU::Point> &imuMeasurements,
         Sophus::SE3f &Tcw)
     {
-        // // Convert ROS image message to OpenCV Mat
-        // cv_bridge::CvImageConstPtr cvRGB;
-        // // Copy the ros rgb image message to cv::Mat.
-        // try
+        // Convert ROS image message to OpenCV Mat
+        cv_bridge::CvImageConstPtr cvRGB;
+        // Copy the ros rgb image message to cv::Mat.
+        try
+        {
+            cvRGB = cv_bridge::toCvShare(msgRGB);
+        }
+        catch (cv_bridge::Exception &e)
+        {
+            std::cerr << "MONO cv_bridge exception RGB!" << endl;
+            return false;
+        }
+
+        // Pass IMU measurements to ORB-SLAM3
+        // if (sensor_ == ORB_SLAM3::System::IMU_MONOCULAR)
         // {
-        //     cvRGB = cv_bridge::toCvShare(msgRGB);
-        // }
-        // catch (cv_bridge::Exception &e)
+        // for (const auto &imu : imuMeasurements)
         // {
-        //     std::cerr << "cv_bridge exception RGB!" << endl;
-        //     return false;
+        // mSLAM_->GrabImuData(imu);
         // }
-
-    // Pass IMU measurements to ORB-SLAM3
-    if (sensor_ == ORB_SLAM3::System::IMU_MONOCULAR)
-    {
-    for (const auto &imu : imuMeasurements)
-    {
-    mSLAM_->GrabImuData(imu);
-    }
-    }
-
-    // Check if tracking was successful
-    if (mSLAM_->TrackMonocular(msgRGB, timestamp, imuMeasurements, Tcw)) // Check if Tcw is valid
-    {
-    RCLCPP_WARN(rclcpp::get_logger("ORB_SLAM3_Interface"), "Tracking Mono failed.");
-    return false;
-    }
-
-    RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"), "Tracking Mono successful.");
-    return true;
+        // }
+        
+        // Extract the cv::Mat from the cv_bridge::CvImageConstPtr
+        const cv::Mat &im = cvRGB->image;
+        // Check if tracking was successful
+        Tcw = mSLAM_->TrackMonocular(im, timestamp, imuMeasurements);
+        auto currentTrackingState = mSLAM_->GetTrackingState();
+        auto orbLoopClosing = mSLAM_->GetLoopClosing();
+        if (loopClosing_ && orbLoopClosing->mergeDetected())
+        {
+            // do not publish any values during map merging. This is because the reference poses change.
+            std::cout << "MONO Waiting for merge to finish." << endl;
+            return false;
+        }
+        if (currentTrackingState == 2)
+        {
+            // time_profiler_->startEvent("RefPosesCalc");
+            calculateReferencePoses();
+            // time_profiler_->endEvent("RefPosesCalc");
+            // time_profiler_->startEvent("CorrectTracked");
+            correctTrackedPose(Tcw);
+            // time_profiler_->endEvent("CorrectTracked");
+            // auto tempTwc = Tcw.inverse();
+            // std::vector<ORB_SLAM3::MapPoint *> tempMapPoints;
+            // mapPointsVisibleFromPose(tempTwc, tempMapPoints, 1000, 5.0, 2.0);
+            hasTracked_ = true;
+            return true;
+        }
+        else
+        {
+            switch (currentTrackingState)
+            {
+            case 0:
+                std::cerr << "ORB-SLAM MONO failed: No images yet." << endl;
+                break;
+            case 1:
+                std::cerr << "ORB-SLAM MONO failed: Not initialized." << endl;
+                break;
+            case 3:
+                std::cerr << "ORB-SLAM MONO failed: Tracking LOST." << endl;
+                break;
+            }
+            return false;
+        }
     }
 }

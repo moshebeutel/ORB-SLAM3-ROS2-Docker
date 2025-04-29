@@ -95,7 +95,7 @@ namespace ORB_SLAM3_Wrapper
         initial_pose.orientation.z = robot_qz_;
         initial_pose.orientation.w = robot_qw_;
 
-        this->declare_parameter("odometry_mode", rclcpp::ParameterValue(false));
+        this->declare_parameter("odometry_mode", rclcpp::ParameterValue(true));
         this->get_parameter("odometry_mode", odometry_mode_);
 
         this->declare_parameter("publish_tf", rclcpp::ParameterValue(true));
@@ -303,7 +303,7 @@ namespace ORB_SLAM3_Wrapper
 {
     // Convert ROS timestamp to seconds
     double timestamp = msgRGB->header.stamp.sec + msgRGB->header.stamp.nanosec * 1e-9;
-
+    RCLCPP_INFO(this->get_logger(), "Incomming RGB Image with timestamp: %f", timestamp);
     // Extract IMU measurements synchronized with the current frame
     std::vector<ORB_SLAM3::IMU::Point> imuMeasurements = extractImuMeasurements(timestamp);
     Sophus::SE3f Tcw;
