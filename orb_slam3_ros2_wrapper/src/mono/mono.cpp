@@ -4,7 +4,7 @@
 #include <chrono>
 
 #include "rclcpp/rclcpp.hpp"
-#include "rgbd-slam-node.hpp"
+#include "base-slam-node.hpp"
 
 int main(int argc, char **argv)
 {
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 
     rclcpp::init(argc, argv);
 
-    auto node = std::make_shared<ORB_SLAM3_Wrapper::BaseSlamNode>(argv[1], argv[2], ORB_SLAM3::System::MONOCULAR);
+    auto node = std::make_shared<ORB_SLAM3_Wrapper::BaseSlamNode>(argv[1], argv[2], ORB_SLAM3::System::IMU_MONOCULAR);
     std::cout << "============================ " << std::endl;
 
     auto executor = std::make_shared<rclcpp::executors::MultiThreadedExecutor>();

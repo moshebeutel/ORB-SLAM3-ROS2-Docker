@@ -62,12 +62,12 @@ def generate_launch_description():
         
         orb_slam3_node = Node(
             package='orb_slam3_ros2_wrapper',
-            executable='rgbd',
+            executable='mono',
             output='screen',
             # prefix=["gdbserver localhost:3000"],
             namespace=robot_namespace.perform(context),
             arguments=[vocabulary_file_path, config_file_path],
-            parameters=[configured_params])
+            parameters=[configured_params, {'use_sim_time': use_sim_time}])
         
         return [declare_params_file_cmd, orb_slam3_node]
 
