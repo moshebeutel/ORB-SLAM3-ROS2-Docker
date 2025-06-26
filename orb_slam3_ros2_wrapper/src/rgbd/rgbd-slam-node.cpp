@@ -139,7 +139,7 @@ namespace ORB_SLAM3_Wrapper
 
     void RgbdSlamNode::ImuCallback(const sensor_msgs::msg::Imu::SharedPtr msgIMU)
     {
-        RCLCPP_DEBUG_STREAM(this->get_logger(), "ImuCallback");
+        // RCLCPP_DEBUG_STREAM(this->get_logger(), "ImuCallback");
         // push value to imu buffer.
         interface_->handleIMU(msgIMU);
     }
