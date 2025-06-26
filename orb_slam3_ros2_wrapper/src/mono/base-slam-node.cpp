@@ -33,9 +33,9 @@ namespace ORB_SLAM3_Wrapper
         this->declare_parameter("imu_topic_name", rclcpp::ParameterValue("imu"));
         this->declare_parameter("odom_topic_name", rclcpp::ParameterValue("odom"));
 
-        rgbSub_ = std::make_shared<message_filters::Subscriber<sensor_msgs::msg::Image>>(this, this->get_parameter("rgb_image_topic_name").as_string());
-        imuSub_ = this->create_subscription<sensor_msgs::msg::Imu>(this->get_parameter("imu_topic_name").as_string(), 1000, std::bind(&BaseSlamNode::ImuCallback, this, std::placeholders::_1));
-        odomSub_ = this->create_subscription<nav_msgs::msg::Odometry>(this->get_parameter("odom_topic_name").as_string(), 1000, std::bind(&BaseSlamNode::OdomCallback, this, std::placeholders::_1));
+        rgbSub_ = this->create_subscription<sensor_msgs::msg::Image>(this->get_parameter("rgb_image_topic_name").as_string(), rclcpp::SensorDataQoS(), std::bind(&BaseSlamNode::RGBCallback, this, std::placeholders::_1));
+        imuSub_ = this->create_subscription<sensor_msgs::msg::Imu>(this->get_parameter("imu_topic_name").as_string(), rclcpp::SensorDataQoS(), std::bind(&BaseSlamNode::ImuCallback, this, std::placeholders::_1));
+        odomSub_ = this->create_subscription<nav_msgs::msg::Odometry>(this->get_parameter("odom_topic_name").as_string(), rclcpp::SensorDataQoS(), std::bind(&BaseSlamNode::OdomCallback, this, std::placeholders::_1));
         // Services
         getMapDataService_ = this->create_service<slam_msgs::srv::GetMap>("orb_slam3/get_map_data", std::bind(&BaseSlamNode::getMapServer, this,
                                                                                                               std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
@@ -131,7 +131,9 @@ namespace ORB_SLAM3_Wrapper
 
     void BaseSlamNode::ImuCallback(const sensor_msgs::msg::Imu::SharedPtr msgIMU)
     {
-        RCLCPP_DEBUG_STREAM(this->get_logger(), "ImuCallback");
+        RCLCPP_INFO(this->get_logger(), "ImuCallback");
+        RCLCPP_INFO(this->get_logger(), "IMU received: t=%.6f", 
+        msgIMU->header.stamp.sec + msgIMU->header.stamp.nanosec * 1e-9);
         // push value to imu buffer.
         interface_->handleIMU(msgIMU);
     }
@@ -303,10 +305,11 @@ namespace ORB_SLAM3_Wrapper
 {
     // Convert ROS timestamp to seconds
     double timestamp = msgRGB->header.stamp.sec + msgRGB->header.stamp.nanosec * 1e-9;
-    RCLCPP_INFO(this->get_logger(), "Incomming RGB Image with timestamp: %f", timestamp);
     // Extract IMU measurements synchronized with the current frame
     std::vector<ORB_SLAM3::IMU::Point> imuMeasurements = extractImuMeasurements(timestamp);
     Sophus::SE3f Tcw;
+    // RCLCPP_INFO(this->get_logger(), "Extracted %zu IMU measurements for image t=%.6f", 
+    //imuMeasurements.size(), timestamp);
     // Call ORB-SLAM3's TrackMonocular function
     // Sophus::SE3f Tcw = interface_->TrackMonocular(msgRGB, timestamp, imuMeasurements, Tcw);
     // Check if tracking was successful

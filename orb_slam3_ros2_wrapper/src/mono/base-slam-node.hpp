@@ -107,7 +107,7 @@ namespace ORB_SLAM3_Wrapper
         rclcpp::CallbackGroup::SharedPtr pointsInViewCallbackGroup_;
 
         // ROS Subscribers
-        std::shared_ptr<message_filters::Subscriber<sensor_msgs::msg::Image>> rgbSub_;
+        rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr rgbSub_;
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imuSub_;
         rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odomSub_;
 
