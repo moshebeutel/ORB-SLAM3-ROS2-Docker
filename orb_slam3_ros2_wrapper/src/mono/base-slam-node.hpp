@@ -116,7 +116,10 @@ namespace ORB_SLAM3_Wrapper
         void OdomCallback(const nav_msgs::msg::Odometry::SharedPtr msgOdom);
         void RGBCallback(const sensor_msgs::msg::Image::SharedPtr msgRGB);
 
-        std::vector<ORB_SLAM3::IMU::Point> extractImuMeasurements(double tIm);
+        void processRGBFrame(const sensor_msgs::msg::Image::SharedPtr &msgRGB);
+
+        // std::vector<ORB_SLAM3::IMU::Point> extractImuMeasurements(double tIm);
+        std::deque<sensor_msgs::msg::Image::SharedPtr> rgb_buffer_;
 
         // ROS Params
         std::string robot_base_frame_id_;

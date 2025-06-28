@@ -469,10 +469,36 @@ namespace ORB_SLAM3_Wrapper
 
     void ORBSLAM3Interface::handleIMU(const sensor_msgs::msg::Imu::SharedPtr msgIMU)
     {
-        bufMutex_.lock();
+        std::lock_guard<std::mutex> lock(imuBufMutex_);  // Correct mutex here
+    
         imuBuf_.push(msgIMU);
-        bufMutex_.unlock();
+        RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
+            "[Buffer] Real IMU queue size: %lu", imuBuf_.size());
+    
+        // Limit buffer size
+        static const size_t MAX_IMU_QUEUE_SIZE = 500;
+        while (imuBuf_.size() > MAX_IMU_QUEUE_SIZE)
+            imuBuf_.pop();
     }
+
+    bool ORBSLAM3Interface::HasIMU() const {
+        return !imuBuf_.empty();  // or however you store it
+    }
+
+    size_t ORBSLAM3Interface::GetRealImuQueueSize() {
+        std::lock_guard<std::mutex> lock(imuBufMutex_);
+        return imuBuf_.size();
+    }
+       
+    
+    double ORBSLAM3Interface::GetFirstIMUMsgTime() const {
+        if (!imuBuf_.empty()) {
+            auto &imu = imuBuf_.front();
+            return imu->header.stamp.sec + imu->header.stamp.nanosec * 1e-9;
+        }
+        return std::numeric_limits<double>::max();
+    }
+    
 
     bool ORBSLAM3Interface::trackRGBDi(const sensor_msgs::msg::Image::SharedPtr msgRGB, const sensor_msgs::msg::Image::SharedPtr msgD, Sophus::SE3f &Tcw)
     {
@@ -623,6 +649,43 @@ namespace ORB_SLAM3_Wrapper
             return false;
         }
     }
+
+    std::vector<ORB_SLAM3::IMU::Point> ORBSLAM3Interface::ExtractIMUUntil(double tIm)
+    {
+        std::vector<ORB_SLAM3::IMU::Point> vImuMeas;
+    
+        std::lock_guard<std::mutex> lock(imuBufMutex_);
+    
+        while (!imuBuf_.empty())
+        {
+            auto imuMsg = imuBuf_.front();
+            double imuTime = imuMsg->header.stamp.sec + imuMsg->header.stamp.nanosec * 1e-9;
+    
+            if (imuTime < tIm)
+            {
+                cv::Point3f accel(
+                    imuMsg->linear_acceleration.x,
+                    imuMsg->linear_acceleration.y,
+                    imuMsg->linear_acceleration.z);
+                cv::Point3f gyro(
+                    imuMsg->angular_velocity.x,
+                    imuMsg->angular_velocity.y,
+                    imuMsg->angular_velocity.z);
+    
+                vImuMeas.emplace_back(accel, gyro, imuTime);
+                imuBuf_.pop();  // ✅ std::queue uses pop()
+            }
+            else
+            {
+                break;
+            }
+        }
+    
+        return vImuMeas;
+    }
+    
+
+
 
     bool ORBSLAM3Interface::trackMonocular(const sensor_msgs::msg::Image::SharedPtr &msgRGB,
         const double &timestamp,

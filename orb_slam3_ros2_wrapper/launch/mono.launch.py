@@ -4,14 +4,15 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess
-from launch.actions import IncludeLaunchDescription, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, TimerAction
+from launch.actions import IncludeLaunchDescription, OpaqueFunction, LogInfo
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, FindExecutable, TextSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from nav2_common.launch import RewrittenYaml
+
 
 def generate_launch_description():
 
@@ -69,7 +70,11 @@ def generate_launch_description():
             arguments=[vocabulary_file_path, config_file_path],
             parameters=[configured_params, {'use_sim_time': use_sim_time}])
         
-        return [declare_params_file_cmd, orb_slam3_node]
+        delayed_orb_slam3_node = TimerAction(period=2.0,  # seconds
+                                             actions=[orb_slam3_node])
+
+        return [declare_params_file_cmd, LogInfo(msg="Launching ORB-SLAM3 after delay..."), delayed_orb_slam3_node]
+#---------------------------------------------
 
     opaque_function = OpaqueFunction(function=all_nodes_launch, args=[robot_namespace])
 #---------------------------------------------

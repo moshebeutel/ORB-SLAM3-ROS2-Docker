@@ -90,6 +90,12 @@ namespace ORB_SLAM3_Wrapper
         void mapPointsVisibleFromPose(Sophus::SE3f& cameraPose, std::vector<ORB_SLAM3::MapPoint*>& points, int maxLandmarks, float maxDistance, float maxAngle);
 
         void handleIMU(const sensor_msgs::msg::Imu::SharedPtr msgIMU);
+        
+        double GetFirstIMUMsgTime() const;
+        
+        bool HasIMU() const;
+        
+        size_t GetRealImuQueueSize();
 
         bool trackRGBDi(const sensor_msgs::msg::Image::SharedPtr msgRGB, const sensor_msgs::msg::Image::SharedPtr msgD, Sophus::SE3f &Tcw);
 
@@ -114,6 +120,15 @@ namespace ORB_SLAM3_Wrapper
             return orbAtlas_->GetAllMaps().size(); 
         };
 
+        // std::vector<ORB_SLAM3::IMU::Point> extractImuMeasurements(double tIm);
+        std::vector<ORB_SLAM3::IMU::Point> ExtractIMUUntil(double tIm);
+
+        std::queue<sensor_msgs::msg::Imu::SharedPtr> GetImuBufferSnapshot()
+        {
+            std::lock_guard<std::mutex> lock(imuBufMutex_);
+            return imuBuf_; // returns a copy
+        }
+
     private:
         std::shared_ptr<ORB_SLAM3::System> mSLAM_;
         std::shared_ptr<WrapperTypeConversions> typeConversions_;
@@ -126,6 +141,7 @@ namespace ORB_SLAM3_Wrapper
 
         queue<sensor_msgs::msg::Imu::SharedPtr> imuBuf_;
         std::mutex bufMutex_;
+        std::mutex imuBufMutex_;
         std::mutex mapDataMutex_;
         std::mutex currentMapPointsMutex_;
 
