@@ -469,16 +469,18 @@ namespace ORB_SLAM3_Wrapper
 
     void ORBSLAM3Interface::handleIMU(const sensor_msgs::msg::Imu::SharedPtr msgIMU)
     {
-        std::lock_guard<std::mutex> lock(imuBufMutex_);  // Correct mutex here
-    
-        imuBuf_.push(msgIMU);
-        RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
-            "[Buffer] Real IMU queue size: %lu", imuBuf_.size());
-    
-        // Limit buffer size
-        static const size_t MAX_IMU_QUEUE_SIZE = 500;
-        while (imuBuf_.size() > MAX_IMU_QUEUE_SIZE)
-            imuBuf_.pop();
+        {
+            std::lock_guard<std::mutex> lock(imuBufMutex_);
+
+            imuBuf_.push_back(msgIMU);
+            static const size_t MAX_IMU_QUEUE_SIZE = 5000;
+
+            while (imuBuf_.size() > MAX_IMU_QUEUE_SIZE)
+                imuBuf_.pop_front();
+
+            // RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
+            //     "[Buffer] Real IMU queue size: %lu", imuBuf_.size());
+        }
     }
 
     bool ORBSLAM3Interface::HasIMU() const {
@@ -539,7 +541,7 @@ namespace ORB_SLAM3_Wrapper
                 cv::Point3f acc(imuBuf_.front()->linear_acceleration.x, imuBuf_.front()->linear_acceleration.y, imuBuf_.front()->linear_acceleration.z);
                 cv::Point3f gyr(imuBuf_.front()->angular_velocity.x, imuBuf_.front()->angular_velocity.y, imuBuf_.front()->angular_velocity.z);
                 vImuMeas.push_back(ORB_SLAM3::IMU::Point(acc, gyr, t));
-                imuBuf_.pop();
+                imuBuf_.pop_front();
             }
         }
         bufMutex_.unlock();
@@ -660,27 +662,44 @@ namespace ORB_SLAM3_Wrapper
         {
             auto imuMsg = imuBuf_.front();
             double imuTime = imuMsg->header.stamp.sec + imuMsg->header.stamp.nanosec * 1e-9;
-    
+
+            RCLCPP_DEBUG(rclcpp::get_logger("ORB_SLAM3_Interface"),
+             "Accepted IMU @ %.6f", imuTime);
+
+            double first_imu_time = imuBuf_.front()->header.stamp.sec + imuBuf_.front()->header.stamp.nanosec * 1e-9;
+            // If image timestamp is before any available IMU data, we can't process yet
+            if (tIm < first_imu_time)
+            {
+                RCLCPP_WARN(rclcpp::get_logger("ORB_SLAM3_Interface"),
+                    "Delaying image at t=%.6f — waiting for IMU to catch up (first imu=%.6f)",
+                    tIm, first_imu_time);
+                break;
+            }
             if (imuTime < tIm)
             {
-                cv::Point3f accel(
-                    imuMsg->linear_acceleration.x,
-                    imuMsg->linear_acceleration.y,
-                    imuMsg->linear_acceleration.z);
-                cv::Point3f gyro(
-                    imuMsg->angular_velocity.x,
-                    imuMsg->angular_velocity.y,
-                    imuMsg->angular_velocity.z);
-    
-                vImuMeas.emplace_back(accel, gyro, imuTime);
-                imuBuf_.pop();  // ✅ std::queue uses pop()
+                const auto &accel = imuMsg->linear_acceleration;
+                const auto &gyro = imuMsg->angular_velocity;
+                RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
+                    "Trying to extract IMU until %.6f (first IMU in queue = %.6f)",
+                    tIm, imuBuf_.front()->header.stamp.sec + imuBuf_.front()->header.stamp.nanosec * 1e-9);
+
+
+                vImuMeas.emplace_back(
+                    accel.x, accel.y, accel.z,
+                    gyro.x, gyro.y, gyro.z,
+                    imuTime
+                );
+
+                imuBuf_.pop_front();  // ✅ std::queue uses pop()
             }
             else
             {
                 break;
             }
         }
-    
+        RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
+             "Extracted %zu IMU measurements", vImuMeas.size());
+
         return vImuMeas;
     }
     
@@ -713,13 +732,44 @@ namespace ORB_SLAM3_Wrapper
         // mSLAM_->GrabImuData(imu);
         // }
         // }
+        if (!imuMeasurements.empty())
+        {
+            std::cerr << "IMU measurements: " << imuMeasurements.size()
+                    << ", from t=" << imuMeasurements.front().t
+                    << " to t=" << imuMeasurements.back().t
+                    << ", for image t=" << timestamp << std::endl;
+        }
+
         
         // Extract the cv::Mat from the cv_bridge::CvImageConstPtr
         const cv::Mat &im = cvRGB->image;
+
+        // if (mSLAM_->GetMap()->KeyFramesInMap() > 0)
+        // {
+        //     std::cout << "[TRACK_MONO] Keyframes in map: " << mSLAM_->GetMap()->KeyFramesInMap() << std::endl;
+        // }
+
         // Check if tracking was successful
         Tcw = mSLAM_->TrackMonocular(im, timestamp, imuMeasurements);
+        if (!Tcw.so3().matrix().allFinite() || !Tcw.translation().allFinite())
+        {
+            std::cerr << "Tcw contains NaNs or Infs after tracking. Skipping." << std::endl;
+            return false;
+        }
+
         auto currentTrackingState = mSLAM_->GetTrackingState();
+        if (!mSLAM_) {
+            std::cerr << "mSLAM_ is null! Aborting track." << std::endl;
+            return false;
+        }
+
+
         auto orbLoopClosing = mSLAM_->GetLoopClosing();
+        if (!orbLoopClosing) {
+            std::cerr << "LoopClosing pointer is null!" << std::endl;
+            return false;
+        }
+
         if (loopClosing_ && orbLoopClosing->mergeDetected())
         {
             // do not publish any values during map merging. This is because the reference poses change.
@@ -728,6 +778,7 @@ namespace ORB_SLAM3_Wrapper
         }
         if (currentTrackingState == 2)
         {
+            try{
             // time_profiler_->startEvent("RefPosesCalc");
             calculateReferencePoses();
             // time_profiler_->endEvent("RefPosesCalc");
@@ -737,11 +788,17 @@ namespace ORB_SLAM3_Wrapper
             // auto tempTwc = Tcw.inverse();
             // std::vector<ORB_SLAM3::MapPoint *> tempMapPoints;
             // mapPointsVisibleFromPose(tempTwc, tempMapPoints, 1000, 5.0, 2.0);
+            } catch (const std::exception& e) {
+                std::cerr << "Exception during reference pose correction: " << e.what() << std::endl;
+                return false;
+            }
             hasTracked_ = true;
             return true;
         }
         else
         {
+            std::cerr << "Tracking state after TrackMonocular: " << currentTrackingState << std::endl;
+
             switch (currentTrackingState)
             {
             case 0:

@@ -123,7 +123,7 @@ namespace ORB_SLAM3_Wrapper
         // std::vector<ORB_SLAM3::IMU::Point> extractImuMeasurements(double tIm);
         std::vector<ORB_SLAM3::IMU::Point> ExtractIMUUntil(double tIm);
 
-        std::queue<sensor_msgs::msg::Imu::SharedPtr> GetImuBufferSnapshot()
+        std::deque<sensor_msgs::msg::Imu::SharedPtr> GetImuBufferSnapshot()
         {
             std::lock_guard<std::mutex> lock(imuBufMutex_);
             return imuBuf_; // returns a copy
@@ -139,7 +139,7 @@ namespace ORB_SLAM3_Wrapper
         bool bUseViewer_;
         bool loopClosing_;
 
-        queue<sensor_msgs::msg::Imu::SharedPtr> imuBuf_;
+        std::deque<sensor_msgs::msg::Imu::SharedPtr> imuBuf_;
         std::mutex bufMutex_;
         std::mutex imuBufMutex_;
         std::mutex mapDataMutex_;

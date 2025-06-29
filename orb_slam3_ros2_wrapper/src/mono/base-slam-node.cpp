@@ -137,8 +137,8 @@ namespace ORB_SLAM3_Wrapper
     void BaseSlamNode::ImuCallback(const sensor_msgs::msg::Imu::SharedPtr msgIMU)
     {
         // RCLCPP_INFO(this->get_logger(), "ImuCallback");
-        RCLCPP_INFO(this->get_logger(), "IMU received: t=%.6f",
-        msgIMU->header.stamp.sec + msgIMU->header.stamp.nanosec * 1e-9);
+        // RCLCPP_INFO(this->get_logger(), "IMU received: t=%.6f",
+        // msgIMU->header.stamp.sec + msgIMU->header.stamp.nanosec * 1e-9);
         // push value to imu buffer.
         interface_->handleIMU(msgIMU);
     }
@@ -313,16 +313,24 @@ namespace ORB_SLAM3_Wrapper
 
     void BaseSlamNode::RGBCallback(const sensor_msgs::msg::Image::SharedPtr msgRGB)
     {
-        const double buffer_delay_sec = 0.05;  // 50ms delay buffer
-        double img_ts = msgRGB->header.stamp.sec + msgRGB->header.stamp.nanosec * 1e-9;
+        const double buffer_delay_sec = 0.75;  // 750ms delay buffer for IMU to catch up
         rgb_buffer_.push_back(msgRGB);
+        // RCLCPP_INFO(this->get_logger(), "RGBCallback triggered! Time = %.3f", msgRGB->header.stamp.sec + msgRGB->header.stamp.nanosec * 1e-9);
 
-        // Try processing images from buffer
-        double now = this->now().seconds();
+
+        // Use ROS time
+        rclcpp::Time ros_now = this->get_clock()->now();
+        double now = ros_now.seconds();
+        if (ros_now.seconds() == 0.0) {
+            RCLCPP_WARN(this->get_logger(), "ROS time not initialized yet. Skipping image.");
+            return;
+        }
+
         while (!rgb_buffer_.empty())
         {
             const auto &img = rgb_buffer_.front();
             double ts = img->header.stamp.sec + img->header.stamp.nanosec * 1e-9;
+            RCLCPP_INFO(this->get_logger(), "Processing image at t=%.6f, now = %.6f, now-ts=%.3f", ts, now, now - ts);
             if (now - ts >= buffer_delay_sec)
             {
                 rgb_buffer_.pop_front();
@@ -342,50 +350,64 @@ namespace ORB_SLAM3_Wrapper
             RCLCPP_WARN(this->get_logger(), "No IMU data yet, skipping image at t=%.6f", timestamp);
             return;
         }
-        
+
+        // Only check if we have IMU data at all
+        if (!interface_->HasIMU()) {
+            RCLCPP_WARN(this->get_logger(), "No IMU data yet, skipping image at t=%.6f", timestamp);
+            return;
+        }
+
+        // Get the current time for log/debug
+        double now = this->get_clock()->now().seconds();
+
+        // Get IMU time BEFORE extraction
         double first_imu_time = interface_->GetFirstIMUMsgTime();
+        RCLCPP_INFO(this->get_logger(), "Now: %.3f, Img: %.3f, First IMU: %.3f", now, timestamp, first_imu_time);
+
+        // Skip if image timestamp is too early
         if (timestamp < first_imu_time) {
             RCLCPP_WARN(this->get_logger(),
                         "Image timestamp (%.6f) is before first IMU timestamp (%.6f). Skipping.",
                         timestamp, first_imu_time);
             return;
-        }      
+        }
 
-        // Extract IMU measurements
+        // Extract IMU measurements AFTER doing safety checks
         std::vector<ORB_SLAM3::IMU::Point> imuMeasurements = interface_->ExtractIMUUntil(timestamp);
+        size_t imu_size = imuMeasurements.size();
 
-        RCLCPP_DEBUG(this->get_logger(), "Image t=%.6f, extracted %zu IMU msgs", timestamp, imuMeasurements.size());
-
-        if (imuMeasurements.empty())
+        if (imu_size == 0)
         {
             RCLCPP_WARN(this->get_logger(), "No IMU measurements for image t=%.6f. Skipping frame.", timestamp);
+            RCLCPP_ERROR(this->get_logger(), "Extracted 0 IMU measurements. Aborting trackMonocular call.");
             return;
         }
 
-        if (interface_->GetRealImuQueueSize()< 4 || timestamp < interface_->GetFirstIMUMsgTime())
-        {
-            RCLCPP_WARN(this->get_logger(), "Delaying first image. Need more IMU or proper alignment.");
-            return;
-        }       
-
+        // Use extracted IMU, don't ask buffer again
+        RCLCPP_WARN(this->get_logger(),
+                    "Image t=%.6f, Extracted %zu IMU msgs from buffer", timestamp, imu_size);
 
         double lastImuTime = imuMeasurements.back().t;
         double dt = timestamp - lastImuTime;
         RCLCPP_DEBUG(this->get_logger(), "Δt (image - last IMU): %.6f", dt);
 
         Sophus::SE3f Tcw;
-        bool success = interface_->trackMonocular(msgRGB, timestamp, imuMeasurements, Tcw);
+        try {
+            bool success = interface_->trackMonocular(msgRGB, timestamp, imuMeasurements, Tcw);
 
-        if (!success)
-        {
-            RCLCPP_WARN(this->get_logger(), "ORB-SLAM3 failed to track the frame at t=%.6f", timestamp);
+            if (!success)
+            {
+                RCLCPP_WARN(this->get_logger(), "ORB-SLAM3 failed to track the frame at t=%.6f", timestamp);
+                return;
+            }
+        } catch (const std::exception &e) {
+            RCLCPP_ERROR(this->get_logger(), "Exception in trackMonocular: %s", e.what());
             return;
         }
 
         isTracked_ = true;
         RCLCPP_INFO(this->get_logger(), "Tracking succeeded. isTracked_ = true");
 
-        // Publish TF
         if (publish_tf_)
         {
             if (!odometry_mode_)
@@ -400,7 +422,6 @@ namespace ORB_SLAM3_Wrapper
             tfBroadcaster_->sendTransform(tfMapOdom_);
         }
 
-        // Publish robot pose
         geometry_msgs::msg::PoseStamped pose;
         interface_->getRobotPose(pose);
         pose.header.stamp = msgRGB->header.stamp;
