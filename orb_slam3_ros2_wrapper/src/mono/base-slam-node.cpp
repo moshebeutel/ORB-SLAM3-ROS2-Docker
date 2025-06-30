@@ -382,6 +382,12 @@ namespace ORB_SLAM3_Wrapper
             RCLCPP_ERROR(this->get_logger(), "Extracted 0 IMU measurements. Aborting trackMonocular call.");
             return;
         }
+        if (imuMeasurements.size() < 2 || imuMeasurements.back().t - imuMeasurements.front().t < 1e-4) {
+            RCLCPP_WARN(rclcpp::get_logger("ORB_SLAM3_Interface"), 
+                        "Extracted IMU span too short or only one IMU sample. Dropping frame.");
+            return;  // Return empty vector — will be caught
+        }
+        
 
         // Use extracted IMU, don't ask buffer again
         RCLCPP_WARN(this->get_logger(),
@@ -403,7 +409,10 @@ namespace ORB_SLAM3_Wrapper
         } catch (const std::exception &e) {
             RCLCPP_ERROR(this->get_logger(), "Exception in trackMonocular: %s", e.what());
             return;
+        } catch (...) {
+            RCLCPP_ERROR(this->get_logger(), "Unknown exception in trackMonocular.");
         }
+        
 
         isTracked_ = true;
         RCLCPP_INFO(this->get_logger(), "Tracking succeeded. isTracked_ = true");

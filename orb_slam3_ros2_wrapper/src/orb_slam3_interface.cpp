@@ -750,6 +750,13 @@ namespace ORB_SLAM3_Wrapper
         // }
 
         // Check if tracking was successful
+
+        double imu_span = imuMeasurements.back().t - imuMeasurements.front().t;
+        if (imu_span < 0.1) {
+            std::cerr << "IMU span too short: " << imu_span << "s. Skipping frame.\n";
+            return false;
+        }
+
         Tcw = mSLAM_->TrackMonocular(im, timestamp, imuMeasurements);
         if (!Tcw.so3().matrix().allFinite() || !Tcw.translation().allFinite())
         {
