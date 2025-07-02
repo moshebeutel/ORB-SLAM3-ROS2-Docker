@@ -1,2 +1,13 @@
 [safe]
 	directory = /home/orb/ORB_SLAM3
+[safe]
+	directory = /home/user1/GIT/TheAgency/ORB-SLAM3-ROS2-Docker
+	directory = /home/user1/GIT/TheAgency
+	directory = /home/user1/GIT/TheAgency/ORB-SLAM3-ROS2-Docker/ORB_SLAM3
+	directory = /PX4-Autopilot
+	directory = /home/user1/Desktop/sim/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic
+[user]
+	name = daphnaa
+	email = daphna.ashkenazi@gmail.com
+[credential]
+	helper = "!f() { /root/.vscode-server/bin/19e0f9e681ecb8e5c09d8784acaa601316ca4571/node /tmp/vscode-remote-containers-cd215343-0dd2-4a4b-a379-2a402fe1c11c.js git-credential-helper $*; }; f"

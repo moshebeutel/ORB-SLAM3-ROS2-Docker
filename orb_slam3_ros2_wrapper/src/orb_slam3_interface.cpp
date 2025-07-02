@@ -473,7 +473,7 @@ namespace ORB_SLAM3_Wrapper
             std::lock_guard<std::mutex> lock(imuBufMutex_);
 
             imuBuf_.push_back(msgIMU);
-            static const size_t MAX_IMU_QUEUE_SIZE = 5000;
+            static const size_t MAX_IMU_QUEUE_SIZE = 100000;
 
             while (imuBuf_.size() > MAX_IMU_QUEUE_SIZE)
                 imuBuf_.pop_front();
@@ -679,16 +679,16 @@ namespace ORB_SLAM3_Wrapper
             {
                 const auto &accel = imuMsg->linear_acceleration;
                 const auto &gyro = imuMsg->angular_velocity;
-                RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
-                    "Trying to extract IMU until %.6f (first IMU in queue = %.6f)",
-                    tIm, imuBuf_.front()->header.stamp.sec + imuBuf_.front()->header.stamp.nanosec * 1e-9);
+                // RCLCPP_INFO(rclcpp::get_logger("ORB_SLAM3_Interface"),
+                //     "Trying to extract IMU until %.6f (first IMU in queue = %.6f)",
+                //     tIm, imuBuf_.front()->header.stamp.sec + imuBuf_.front()->header.stamp.nanosec * 1e-9);
 
 
                 vImuMeas.emplace_back(
-                    accel.x, accel.y, accel.z,
-                    gyro.x, gyro.y, gyro.z,
-                    imuTime
-                );
+                    cv::Point3f(accel.x, accel.y, accel.z),
+                    cv::Point3f(gyro.x, gyro.y, gyro.z),
+                    imuTime);
+
 
                 imuBuf_.pop_front();  // ✅ std::queue uses pop()
             }
@@ -752,11 +752,11 @@ namespace ORB_SLAM3_Wrapper
         // Check if tracking was successful
 
         double imu_span = imuMeasurements.back().t - imuMeasurements.front().t;
-        if (imu_span < 0.1) {
+        if (imu_span < 1e-5) {
             std::cerr << "IMU span too short: " << imu_span << "s. Skipping frame.\n";
             return false;
         }
-
+        // std::cout << "imuMeasurement order: " << imuMeasurements.front().t << " to " << imuMeasurements.back().t << std::endl;
         Tcw = mSLAM_->TrackMonocular(im, timestamp, imuMeasurements);
         if (!Tcw.so3().matrix().allFinite() || !Tcw.translation().allFinite())
         {

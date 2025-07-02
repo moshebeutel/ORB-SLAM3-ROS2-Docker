@@ -11,9 +11,13 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/colcon
+~Msle0~/\<Examples\>
 
 # Command Line History (newest to oldest):
+:wq
+|2,0,1750955800,,"wq"
+:qa
+|2,0,1748435093,,"qa"
 :x
 |2,0,1709635249,,"x"
 :q
@@ -28,6 +32,10 @@
 |2,0,1708855936,,"!q"
 
 # Search String History (newest to oldest):
+? \<Examples\>
+|2,1,1747928074,,"\\<Examples\\>"
+? \<target_link_libraries\>
+|2,1,1747928072,,"\\<target_link_libraries\\>"
 ?/colcon
 |2,1,1709580449,47,"colcon"
 ?/11
@@ -49,230 +57,283 @@
 |3,1,36,0,1,0,1708855923,"s"
 
 # File marks:
-'0  17  50  ~/shell_scripts/multi_orb.sh
-|4,48,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
-'1  7  33  ~/shell_scripts/multi_orb.sh
-|4,49,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
-'2  7  33  ~/shell_scripts/multi_orb.sh
-|4,50,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
-'3  17  48  ~/shell_scripts/multi_orb.sh
-|4,51,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
-'4  17  48  ~/shell_scripts/multi_orb.sh
-|4,52,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
-'5  17  48  ~/shell_scripts/multi_orb.sh
-|4,53,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
-'6  6  10  ~/shell_scripts/multi_orb.sh
-|4,54,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
-'7  6  10  ~/shell_scripts/multi_orb.sh
-|4,55,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
-'8  6  10  ~/shell_scripts/multi_orb.sh
-|4,56,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
-'9  6  10  ~/shell_scripts/multi_orb.sh
-|4,57,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
+'0  145  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp
+|4,48,145,0,1750955800,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp"
+'1  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,49,81,0,1748435093,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+'2  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py
+|4,50,1,0,1748434607,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py"
+'3  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,51,81,0,1748434587,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+'4  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,52,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+'5  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,53,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+'6  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,54,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+'7  56  0  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/mono_inertial_euroc.cc
+|4,55,56,0,1747928554,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/mono_inertial_euroc.cc"
+'8  227  1  /home/orb/ORB_SLAM3/CMakeLists.txt
+|4,56,227,1,1747928086,"/home/orb/ORB_SLAM3/CMakeLists.txt"
+'9  229  0  /home/orb/ORB_SLAM3/CMakeLists.txt
+|4,57,229,0,1747927978,"/home/orb/ORB_SLAM3/CMakeLists.txt"
 
 # Jumplist (newest first):
--'  17  50  ~/shell_scripts/multi_orb.sh
-|4,39,17,50,1709635249,"~/shell_scripts/multi_orb.sh"
--'  7  33  ~/shell_scripts/multi_orb.sh
-|4,39,7,33,1709635236,"~/shell_scripts/multi_orb.sh"
--'  7  33  ~/shell_scripts/multi_orb.sh
-|4,39,7,33,1709635211,"~/shell_scripts/multi_orb.sh"
--'  17  48  ~/shell_scripts/multi_orb.sh
-|4,39,17,48,1709635184,"~/shell_scripts/multi_orb.sh"
--'  17  48  ~/shell_scripts/multi_orb.sh
-|4,39,17,48,1709635034,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709635026,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709634994,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709634980,"~/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  1  0  ~/colcon_ws2/shell_scripts/multi_orb.sh
-|4,39,1,0,1709634977,"~/colcon_ws2/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709634916,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709634916,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709634916,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709632083,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709632083,"~/shell_scripts/multi_orb.sh"
--'  6  18  ~/shell_scripts/multi_orb.sh
-|4,39,6,18,1709632066,"~/shell_scripts/multi_orb.sh"
--'  6  18  ~/shell_scripts/multi_orb.sh
-|4,39,6,18,1709632066,"~/shell_scripts/multi_orb.sh"
--'  6  18  ~/shell_scripts/multi_orb.sh
-|4,39,6,18,1709632066,"~/shell_scripts/multi_orb.sh"
--'  6  18  ~/shell_scripts/multi_orb.sh
-|4,39,6,18,1709632066,"~/shell_scripts/multi_orb.sh"
--'  7  18  ~/shell_scripts/multi_orb.sh
-|4,39,7,18,1709628429,"~/shell_scripts/multi_orb.sh"
--'  7  18  ~/shell_scripts/multi_orb.sh
-|4,39,7,18,1709628429,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  5  77  ~/shell_scripts/multi_orb.sh
-|4,39,5,77,1709628419,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709628419,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709628393,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709628393,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709628349,"~/shell_scripts/multi_orb.sh"
--'  6  10  ~/shell_scripts/multi_orb.sh
-|4,39,6,10,1709628349,"~/shell_scripts/multi_orb.sh"
--'  9  0  ~/shell_scripts/multi_orb.sh
-|4,39,9,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  9  0  ~/shell_scripts/multi_orb.sh
-|4,39,9,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  9  0  ~/shell_scripts/multi_orb.sh
-|4,39,9,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  9  0  ~/shell_scripts/multi_orb.sh
-|4,39,9,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  8  0  ~/shell_scripts/multi_orb.sh
-|4,39,8,0,1709628244,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709613273,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709613273,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709613273,"~/shell_scripts/multi_orb.sh"
--'  7  0  ~/shell_scripts/multi_orb.sh
-|4,39,7,0,1709613273,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  15  0  ~/shell_scripts/multi_orb.sh
-|4,39,15,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  19  0  ~/shell_scripts/multi_orb.sh
-|4,39,19,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  14  0  ~/shell_scripts/multi_orb.sh
-|4,39,14,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  15  0  ~/shell_scripts/multi_orb.sh
-|4,39,15,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  19  0  ~/shell_scripts/multi_orb.sh
-|4,39,19,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  14  0  ~/shell_scripts/multi_orb.sh
-|4,39,14,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  15  0  ~/shell_scripts/multi_orb.sh
-|4,39,15,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  19  0  ~/shell_scripts/multi_orb.sh
-|4,39,19,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  14  0  ~/shell_scripts/multi_orb.sh
-|4,39,14,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  15  0  ~/shell_scripts/multi_orb.sh
-|4,39,15,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  17  0  ~/shell_scripts/multi_orb.sh
-|4,39,17,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  19  0  ~/shell_scripts/multi_orb.sh
-|4,39,19,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  15  0  ~/shell_scripts/multi_orb.sh
-|4,39,15,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  14  0  ~/shell_scripts/multi_orb.sh
-|4,39,14,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  17  0  ~/shell_scripts/multi_orb.sh
-|4,39,17,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  17  0  ~/shell_scripts/multi_orb.sh
-|4,39,17,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  16  0  ~/shell_scripts/multi_orb.sh
-|4,39,16,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  17  0  ~/shell_scripts/multi_orb.sh
-|4,39,17,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  18  0  ~/shell_scripts/multi_orb.sh
-|4,39,18,0,1709613262,"~/shell_scripts/multi_orb.sh"
--'  17  0  ~/shell_scripts/multi_orb.sh
-|4,39,17,0,1709613262,"~/shell_scripts/multi_orb.sh"
+-'  145  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp
+|4,39,145,0,1750955800,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp
+|4,39,1,0,1750955790,"~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp"
+-'  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,81,0,1748435093,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,81,0,1748435093,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py
+|4,39,1,0,1748434607,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py
+|4,39,1,0,1748434607,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py
+|4,39,1,0,1748434607,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py
+|4,39,1,0,1748434607,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py"
+-'  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,81,0,1748434587,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,81,0,1748434587,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,81,0,1748434587,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  81  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,81,0,1748434587,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,1,0,1748434558,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,1,0,1748434558,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,1,0,1748434558,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,1,0,1748434558,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,1,0,1748434558,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+|4,39,1,0,1748434558,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  14  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,14,0,1748434552,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+|4,39,1,0,1748434539,"~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  1  0  ~/colcon_ws/get_landmarks_in_view.txt
+|4,39,1,0,1748429143,"~/colcon_ws/get_landmarks_in_view.txt"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
+-'  45  14  /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+|4,39,45,14,1747930143,"/home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml"
 
 # History of marks within files (newest to oldest):
+
+> ~/colcon_ws/src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp
+	*	1750955797	0
+	"	145	0
+
+> ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/mono.launch.py
+	*	1748435091	0
+	"	81	0
+
+> ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot.launch.py
+	*	1748434606	0
+	"	1	0
+
+> ~/colcon_ws/src/orb_slam3_ros2_wrapper/launch/unirobot_mono.launch.py
+	*	1748434550	0
+	"	14	0
+
+> ~/colcon_ws/get_landmarks_in_view.txt
+	*	1748429141	0
+	"	1	0
+
+> /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/google_phone.yaml
+	*	1747930141	0
+	"	45	14
+	^	45	15
+	.	14	14
+	+	11	15
+	+	12	15
+	+	13	14
+	+	14	14
+
+> /home/orb/ORB_SLAM3/Examples/Monocular-Inertial/mono_inertial_euroc.cc
+	*	1747928553	0
+	"	56	0
+
+> /home/orb/ORB_SLAM3/CMakeLists.txt
+	*	1747928085	0
+	"	227	1
+	^	227	2
+	.	227	1
+	+	218	0
+	+	219	0
+	+	221	0
+	+	222	0
+	+	222	60
+	+	223	0
+	+	225	0
+	+	226	0
+	+	227	0
+	+	221	0
+	+	225	1
+	+	226	1
+	+	227	1
 
 > ~/shell_scripts/multi_orb.sh
 	*	1709635248	0
@@ -314,10 +375,6 @@
 
 > ~/colcon_ws/src/orb_slam3_ros2_wrapper/params/scout_v2_rgbd.yaml
 	*	1709488173	0
-	"	1	0
-
-> /home/orb/ORB_SLAM3/CMakeLists.txt
-	*	1709406721	0
 	"	1	0
 
 > /usr/local/include/sigslot/README.md

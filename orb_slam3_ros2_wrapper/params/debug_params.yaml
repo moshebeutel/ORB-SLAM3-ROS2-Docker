@@ -1,7 +1,3 @@
-# Add a "/" at the start of the topics to avoid namespacing
-# The frame_ids are automatically namespaced in the rgbd.launch.py file.
-# If the robot namespace is "robot_0" then the frame_ids become "robot_0/camera_link"
-
 ORB_SLAM3_ROS2:
   ros__parameters:
     # slam related

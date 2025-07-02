@@ -504,3 +504,264 @@ ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
 cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
 ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
 exit
+cd colcon_ws/
+ls
+source /opt/ros/humble/setup.bash 
+. install/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build
+source /opt/ros/humble/setup.bash 
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+source /opt/ros/humble/setup.bash 
+. install/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+gdb --args ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+ls /colcon_ws/src/orb_slam3_ros2_wrapper/params/
+ls ../colcon_ws/src/orb_slam3_ros2_wrapper/params/
+cd
+ls /colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+ls /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+find . -name gazebo_rgbd.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+export RCUTILS_LOGGING_BUFFERED_STREAM=1
+export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity}] [{name}]: {message}"
+export RCLCPP_LOG_LEVEL=DEBUG
+cd colcon_ws/
+ros2 launch --prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 launch -h
+ros2 launch --launch-prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch --prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 launch --launch-prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+ulimit -c unlimited
+ros2 launch --launch-prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch --launch-prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+gdb --args /colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /ORB_SLAM3/Vocabulary/ORBvoc.txt /colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+gdb --args /colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch --launch-prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch --launch-prefix 'gdb -ex run --args' orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+colcon build
+colcon build --symlink-install
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+clear
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --symlink-install
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_BUILD_TYPE=Debug
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+vim src/orb_slam3_ros2_wrapper/src/mono/base-slam-node.cpp 
+colcon build --packages-select orb_slam3_ros2_wrapper
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+exit
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+clear
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+clear
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+clear
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+clear
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+clear
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+clear
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+clear
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+exit
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0
+which mono
+ls install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0 
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0 --params-file /tmp/launch_params_xyz.yaml
+source /root/colcon_ws/install/setup.bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp   # or whatever you use
+ros2 run orb_slam3_ros2_wrapper mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0 --params-file /tmp/launch_params_xyz.yaml
+ros2 run orb_slam3_ros2_wrapper mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0 --params-file /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/rgbd-ros-params.yaml
+source /root/colcon_ws/install/setup.bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp   # or whatever you use
+ros2 run orb_slam3_ros2_wrapper mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0 --params-file /tmp/launch_params_xyz.yaml
+source /root/colcon_ws/install/setup.bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp   # or whatever you use
+ros2 run orb_slam3_ros2_wrapper mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0 --params-file /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/rgbd-ros-params.yaml 
+prefix='bash -c "source /root/colcon_ws/install/setup.bash && gdb -ex run --args"'
+ros2 launch orb_slam3_ros2_wrapper debug_launch.py
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
+ros2 launch orb_slam3_ros2_wrapper debug_launch.py
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+bt
+# Optional: rebuild with debug symbols first
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
+# Then source your workspace
+. install/setup.bash
+# And launch GDB manually
+gdb --args   ./install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   ./src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0
+gdb --args   ./install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   ./src/orb_slam3_ros2_wrapper/params/rgbd-ros-params.yaml --ros-args -r __ns:=/robot_0
+gdb --args   ./install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   ./src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0
+. install/setup.bash
+gdb --args   ./install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   ./src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+ls
+./run_orb_slam3_gdb.sh 
+echo $RMW_IMPLEMENTATION
+echo $CYCLONEDDS_URI
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono   /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt   /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml   --ros-args -r __ns:=/robot_0
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml --ros-args   -r __ns:=/robot_0   --params-file /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml --ros-args   -r __ns:=/robot_0   --params-file /root/colcon_ws/src/orb_slam3_ros_wrapper/launch/debug_params.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml --ros-args   -r __ns:=/robot_0   --params-file /root/colcon_ws/src/orb_slam3_ros_wrapper/params/debug_params.yaml
+gdb --args /root/colcon_ws/install/orb_slam3_ros2_wrapper/lib/orb_slam3_ros2_wrapper/mono /home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml --ros-args   -r __ns:=/robot_0   --params-file /root/colcon_ws/src/orb_slam3_ros2_wrapper/params/debug_params.yaml
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 topic echo /clock
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 yopic hz /clo
+ros2 topic hz /clock 
+ros2 topic hz /robot_0/imu 
+ros2 topic hz /robot_0/rgb_camera 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 topic echo /clock 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+ros2 launch orb_slam3_ros2_wrapper mono.launch.py launch-prefix:="gdb -ex run --args"
+colcon build --packages-select orb_slam3_ros2_wrapper --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
+ros2 launch orb_slam3_ros2_wrapper mono.launch.py launch-prefix:="gdb -ex run --args"
+ros2 launch orb_slam3_ros2_wrapper mono.launch.py   launch-prefix:="gdb -ex run --args"   namespace:=robot_0
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py launch-prefix:="gdb -ex run --args"
+exit

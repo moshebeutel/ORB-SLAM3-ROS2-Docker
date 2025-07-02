@@ -313,7 +313,7 @@ namespace ORB_SLAM3_Wrapper
 
     void BaseSlamNode::RGBCallback(const sensor_msgs::msg::Image::SharedPtr msgRGB)
     {
-        const double buffer_delay_sec = 0.75;  // 750ms delay buffer for IMU to catch up
+        const double buffer_delay_sec = 0.1;  // 100ms delay buffer for IMU to catch up
         rgb_buffer_.push_back(msgRGB);
         // RCLCPP_INFO(this->get_logger(), "RGBCallback triggered! Time = %.3f", msgRGB->header.stamp.sec + msgRGB->header.stamp.nanosec * 1e-9);
 
@@ -330,7 +330,7 @@ namespace ORB_SLAM3_Wrapper
         {
             const auto &img = rgb_buffer_.front();
             double ts = img->header.stamp.sec + img->header.stamp.nanosec * 1e-9;
-            RCLCPP_INFO(this->get_logger(), "Processing image at t=%.6f, now = %.6f, now-ts=%.3f", ts, now, now - ts);
+            // RCLCPP_INFO(this->get_logger(), "Processing image at t=%.6f, now = %.6f, now-ts=%.3f", ts, now, now - ts);
             if (now - ts >= buffer_delay_sec)
             {
                 rgb_buffer_.pop_front();
@@ -362,7 +362,7 @@ namespace ORB_SLAM3_Wrapper
 
         // Get IMU time BEFORE extraction
         double first_imu_time = interface_->GetFirstIMUMsgTime();
-        RCLCPP_INFO(this->get_logger(), "Now: %.3f, Img: %.3f, First IMU: %.3f", now, timestamp, first_imu_time);
+        // RCLCPP_INFO(this->get_logger(), "Now: %.3f, Img: %.3f, First IMU: %.3f", now, timestamp, first_imu_time);
 
         // Skip if image timestamp is too early
         if (timestamp < first_imu_time) {
@@ -382,7 +382,7 @@ namespace ORB_SLAM3_Wrapper
             RCLCPP_ERROR(this->get_logger(), "Extracted 0 IMU measurements. Aborting trackMonocular call.");
             return;
         }
-        if (imuMeasurements.size() < 2 || imuMeasurements.back().t - imuMeasurements.front().t < 1e-4) {
+        if (imuMeasurements.size() < 2 || imuMeasurements.back().t - imuMeasurements.front().t < 1e-5) {
             RCLCPP_WARN(rclcpp::get_logger("ORB_SLAM3_Interface"), 
                         "Extracted IMU span too short or only one IMU sample. Dropping frame.");
             return;  // Return empty vector — will be caught
